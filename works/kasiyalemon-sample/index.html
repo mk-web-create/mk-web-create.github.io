@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>菓子屋 - 毎日に、とっておきの甘さを。</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600&family=Epilogue:ital,wght@0,300;1,300&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#827474",
+                        "surface-container-highest": "#ffdbd0",
+                        "surface-dim": "#fbd1c4",
+                        "primary-fixed": "#ffdada",
+                        "on-primary-container": "#775858",
+                        "surface-variant": "#ffdbd0",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#d3c3c2",
+                        "on-surface-variant": "#504444",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ffede8",
+                        "on-primary-fixed-variant": "#5c3f40",
+                        "tertiary-fixed-dim": "#9dd761",
+                        "on-background": "#2c160e",
+                        "primary-fixed-dim": "#e5bdbd",
+                        "primary": "#765657",
+                        "on-secondary-fixed-variant": "#4e4800",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#2c160e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#765657",
+                        "on-secondary-fixed": "#1f1c00",
+                        "secondary-fixed": "#f0e585",
+                        "surface-container-low": "#fff1ed",
+                        "tertiary-fixed": "#b8f47a",
+                        "on-secondary-container": "#6c6410",
+                        "on-primary": "#ffffff",
+                        "background": "#fff8f6",
+                        "on-tertiary-container": "#3d6b00",
+                        "surface-container": "#ffe9e3",
+                        "surface-bright": "#fff8f6",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#0e2000",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#442a22",
+                        "on-primary-fixed": "#2c1516",
+                        "on-tertiary-fixed-variant": "#2c5000",
+                        "secondary-container": "#ede282",
+                        "tertiary-container": "#b1ec73",
+                        "inverse-primary": "#e5bdbd",
+                        "surface": "#fff8f6",
+                        "tertiary": "#3c6a00",
+                        "primary-container": "#fbd1d1",
+                        "secondary": "#67600a",
+                        "surface-container-high": "#ffe2da",
+                        "secondary-fixed-dim": "#d3c96c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "stack-lg": "32px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif JP"],
+                        "headline-sm": ["Noto Serif JP"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Noto Serif JP"],
+                        "accent-script": ["Epilogue"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.5", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "accent-script": ["20px", {"lineHeight": "1.2", "fontWeight": "300"}],
+                        "label-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-strawberry { color: #E84545; }
+        .bg-strawberry { background-color: #E84545; }
+        .bg-lemon { background-color: #FFF492; }
+        .border-strawberry { border-color: #E84545; }
+        .shadow-soft {
+            box-shadow: 0px 10px 30px rgba(93, 64, 55, 0.08);
+        }
+        
+        .lemon-divider {
+            width: 40px;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFF492'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .line-button {
+            background-color: #06C755;
+        }
+        .insta-gradient {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+
+        @media (max-width: 639px) {
+            .hero-section {
+                min-height: calc(100svh - 68px);
+                align-items: flex-end;
+                padding: 56px 0 32px;
+            }
+            .hero-image {
+                object-position: 62% center;
+            }
+            .hero-overlay {
+                background: linear-gradient(to bottom, rgba(44, 22, 14, 0.08), rgba(44, 22, 14, 0.42));
+            }
+            .hero-copy {
+                padding: 24px 20px;
+                background: rgba(255, 248, 246, 0.9);
+                border-color: rgba(255, 255, 255, 0.7);
+            }
+            .hero-copy h1 {
+                font-size: 34px;
+                line-height: 1.35;
+            }
+            .hero-copy p {
+                font-size: 15px;
+                line-height: 1.75;
+            }
+            .hero-actions,
+            .hero-actions a {
+                width: 100%;
+            }
+            .hero-actions a {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Header Section -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 shadow-[0px_10px_30px_rgba(93,64,55,0.08)]">
+<div class="max-w-container-max mx-auto px-gutter py-3 lg:py-4 flex justify-between items-center relative">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">bakery_dining</span>
+<div class="font-headline-sm text-xl sm:text-headline-sm font-bold text-on-background">菓子屋</div>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1" href="#top">ホーム</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#about">お店について</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#menu">メニュー</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#anniversary">記念日ケーキ</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#news">お知らせ</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#access">アクセス</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#faq">よくある質問</a>
+</nav>
+<a class="hidden lg:inline-flex bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-sm text-label-sm hover:opacity-80 transition-opacity active:scale-95 duration-150" href="#anniversary">
+                予約はこちら
+            </a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く" class="lg:hidden w-11 h-11 rounded-full bg-primary-container text-primary inline-flex items-center justify-center" id="menu-toggle" type="button">
+<span aria-hidden="true" class="material-symbols-outlined">menu</span>
+</button>
+<nav aria-label="モバイルナビゲーション" class="hidden absolute top-full left-gutter right-gutter mt-2 bg-surface rounded-3xl p-5 shadow-soft border border-primary-container/40 lg:hidden" id="mobile-menu">
+<div class="grid gap-1 text-sm font-bold text-on-surface-variant">
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#top">ホーム</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#about">お店について</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#menu">メニュー</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#anniversary">記念日ケーキ</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#news">お知らせ</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#access">アクセス</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="#faq">よくある質問</a>
+<a class="mt-2 px-4 py-3 rounded-full bg-primary-container text-on-primary-container text-center" href="#anniversary">予約はこちら</a>
+</div>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<main id="top">
+<section class="hero-section relative min-h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="いちごを飾った菓子屋のショートケーキ" class="hero-image w-full h-full object-cover" src="images/hero-cake.jpg"/>
+<div class="hero-overlay absolute inset-0"></div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 w-full">
+<div class="hero-copy max-w-xl bg-white/40 backdrop-blur-md p-stack-lg rounded-3xl border border-white/20">
+<h1 class="font-display-lg text-display-lg text-on-background mb-stack-md leading-tight">
+                    毎日に、<br/>
+                    とっておきの甘さを。
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                    素材のおいしさを大切に、ひとつひとつ心を込めて。<br/>
+                    笑顔になれるお菓子を、あなたのそばに。
+                </p>
+<div class="hero-actions flex flex-wrap gap-4">
+<a class="bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-sm text-label-sm shadow-sm hover:translate-y-[-2px] transition-transform flex items-center gap-2" href="#anniversary">
+<span class="material-symbols-outlined">calendar_today</span>
+                        予約はこちら
+                    </a>
+<a class="bg-[#06C755] text-white px-8 py-4 rounded-full font-label-sm text-label-sm shadow-sm hover:translate-y-[-2px] transition-transform flex items-center gap-2" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        LINEで問い合わせ
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap" id="about">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="space-y-stack-md order-2 md:order-1">
+<span class="font-accent-script text-accent-script text-primary italic">About</span>
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+                        お店について
+                        <span class="material-symbols-outlined text-secondary-fixed">favorite</span>
+</h2>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        菓子屋は、地域の皆さまに愛される街の小さな洋菓子店です。<br/>
+                        新鮮な素材を選び、手作りにこだわったお菓子を毎日ひとつひとつ丁寧にお作りしています。<br/>
+                        ほっとするやさしい甘さを、ぜひお楽しみください。
+                    </p>
+<a class="border-2 border-primary-container text-primary px-8 py-2 rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors inline-flex items-center gap-2" href="#anniversary">
+                        記念日ケーキを見る
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="relative order-1 md:order-2">
+<div class="grid grid-cols-2 gap-4">
+<img alt="生地を丁寧に混ぜる菓子職人" class="w-full aspect-square object-cover rounded-3xl shadow-soft" src="images/about-baking.jpg"/>
+<div class="grid grid-rows-2 gap-4">
+<img alt="お菓子に使う新鮮なレモン" class="w-full h-full object-cover rounded-3xl shadow-soft" src="images/about-lemons.jpg"/>
+<img alt="お菓子作りに使う卵と小麦粉" class="w-full h-full object-cover rounded-3xl shadow-soft" src="images/about-eggs.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Anniversary Section -->
+<section class="py-section-gap bg-surface-container-low" id="anniversary">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="relative rounded-3xl overflow-hidden shadow-soft aspect-[4/3]">
+<img alt="誕生日を彩るいちごのホールケーキ" class="w-full h-full object-cover" src="images/anniversary-cake.jpg"/>
+</div>
+<div class="space-y-stack-md p-stack-md">
+<span class="font-accent-script text-accent-script text-primary italic">Anniversary</span>
+<h2 class="font-headline-md text-headline-md">特別な日を、もっと特別に。</h2>
+<p class="font-body-md text-on-surface-variant">
+                        お誕生日や記念日にぴったりのホールケーキをご用意しています。<br/>
+                        ご希望に合わせたデザインやメッセージで、大切な1日を彩ります。
+                    </p>
+<a class="bg-primary-container text-on-primary-container px-10 py-4 rounded-full font-label-sm text-label-sm shadow-sm hover:translate-y-[-2px] transition-transform w-full md:w-auto flex justify-center items-center gap-2" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank">
+                        LINEで予約を相談する
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-stack-md">
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+                            3日前までの予約でOK
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                            メッセージプレート無料
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-primary">favorite</span>
+                            アレルギー対応も相談可
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Seasonal Preview Section -->
+<section class="py-section-gap bg-secondary-container/35">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="relative overflow-hidden rounded-[32px] bg-surface shadow-soft border border-secondary-fixed-dim/60 p-6 md:p-8">
+<div class="pointer-events-none absolute right-8 top-6 text-secondary/40 text-3xl" aria-hidden="true">✦</div>
+<div class="pointer-events-none absolute left-8 bottom-6 text-primary/30 text-3xl" aria-hidden="true">✿</div>
+<div class="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-6 md:gap-8 items-center">
+<div class="aspect-[4/3] md:aspect-square overflow-hidden rounded-[24px] bg-surface-container">
+<img alt="今だけの季節メニュー" class="w-full h-full object-cover" src="images/menu-fruit-tart.jpg"/>
+</div>
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 rounded-full bg-primary-container text-primary px-4 py-2 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+Seasonal Menu
+</div>
+<div class="space-y-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">今だけの季節メニュー</h2>
+<p class="text-on-surface-variant leading-7">旬の果物やレモンを使った、期間限定の特別なスイーツをご用意しています。</p>
+</div>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm text-label-sm shadow-sm hover:translate-y-[-2px] transition-transform" href="./works/cake-menu.html#seasonal">
+期間限定メニューを見る
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-section-gap" id="menu">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-section-gap">
+<h2 class="font-headline-md text-headline-md inline-flex items-center gap-3">
+                    普段のメニュー
+                    <span class="material-symbols-outlined text-secondary-fixed">cake</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-lg">
+<!-- Card 1 -->
+<div class="bg-surface rounded-[32px] overflow-hidden shadow-soft group hover:translate-y-[-8px] transition-transform duration-300">
+<div class="aspect-square overflow-hidden">
+<img alt="いちごのショートケーキ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="images/menu-shortcake.jpg"/>
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-sm text-lg">いちごのショートケーキ</h3>
+<p class="text-on-surface-variant text-sm">ふわふわのスポンジと生クリーム、いちごの定番ケーキ。</p>
+<p class="text-primary font-bold text-lg">¥520 <span class="text-xs font-normal">(税込)</span></p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-[32px] overflow-hidden shadow-soft group hover:translate-y-[-8px] transition-transform duration-300">
+<div class="aspect-square overflow-hidden">
+<img alt="季節のフルーツタルト" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="images/menu-fruit-tart.jpg"/>
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-sm text-lg">季節のフルーツタルト</h3>
+<p class="text-on-surface-variant text-sm">旬のフルーツをたっぷりのせた彩り豊かなタルト。</p>
+<p class="text-primary font-bold text-lg">¥580 <span class="text-xs font-normal">(税込)</span></p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-[32px] overflow-hidden shadow-soft group hover:translate-y-[-8px] transition-transform duration-300">
+<div class="aspect-square overflow-hidden">
+<img alt="レモンマドレーヌ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="images/menu-madeleine.jpg"/>
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-sm text-lg">レモンマドレーヌ</h3>
+<p class="text-on-surface-variant text-sm">瀬戸内レモン香る、しっとりやさしい味わいの焼き菓子。</p>
+<p class="text-primary font-bold text-lg">¥220 <span class="text-xs font-normal">(税込)</span></p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface rounded-[32px] overflow-hidden shadow-soft group hover:translate-y-[-8px] transition-transform duration-300">
+<div class="aspect-square overflow-hidden">
+<img alt="ガトーショコラ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="images/menu-gateau-chocolat.jpg"/>
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-sm text-lg">ガトーショコラ</h3>
+<p class="text-on-surface-variant text-sm">濃厚なチョコレートの味わいを楽しめる人気のケーキ。</p>
+<p class="text-primary font-bold text-lg">¥480 <span class="text-xs font-normal">(税込)</span></p>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg text-center">
+<a class="border-2 border-primary-container text-primary px-12 py-3 rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors inline-flex items-center gap-2" href="./works/cake-menu.html">
+                    すべてのメニューを見る
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- News & SNS Section -->
+<section class="py-section-gap bg-surface-container-low/50">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- News Column -->
+<div class="space-y-stack-md" id="news">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="font-accent-script text-accent-script text-primary italic">News</span>
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+                        お知らせ
+                        <span class="material-symbols-outlined text-secondary-fixed">bakery_dining</span>
+</h2>
+</div>
+<div class="space-y-0 divide-y divide-dotted divide-outline-variant">
+<article class="group py-4 flex items-center justify-between px-2 rounded-lg">
+<div class="flex flex-col sm:flex-row sm:items-center gap-3">
+<span class="text-on-surface-variant text-sm font-label-sm">2024.05.20</span>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">新商品</span>
+<span class="text-on-surface">初夏の爽やかレモンケーキが登場しました！</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">campaign</span>
+</article>
+<article class="group py-4 flex items-center justify-between px-2 rounded-lg">
+<div class="flex flex-col sm:flex-row sm:items-center gap-3">
+<span class="text-on-surface-variant text-sm font-label-sm">2024.05.10</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">お知らせ</span>
+<span class="text-on-surface">6月の営業日カレンダーを更新しました</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">campaign</span>
+</article>
+<article class="group py-4 flex items-center justify-between px-2 rounded-lg">
+<div class="flex flex-col sm:flex-row sm:items-center gap-3">
+<span class="text-on-surface-variant text-sm font-label-sm">2024.04.28</span>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">新商品</span>
+<span class="text-on-surface">母の日限定ケーキのご予約受付中です</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">campaign</span>
+</article>
+</div>
+</div>
+<!-- SNS Column -->
+<div class="flex flex-col md:flex-row items-center gap-stack-md bg-white rounded-[40px] p-8 shadow-soft relative overflow-hidden">
+<div class="flex-1 space-y-stack-md z-10">
+<h2 class="font-headline-md text-headline-md flex items-baseline gap-1">
+                        SNS<span class="text-sm font-body-md text-on-surface-variant">でつながる</span>
+</h2>
+<p class="text-sm text-on-surface-variant">最新情報や限定メニューをお届けします♪</p>
+<div class="space-y-3">
+<a class="line-button text-white rounded-2xl p-4 flex items-center gap-4 hover:opacity-90 transition-opacity" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank">
+<div class="bg-white/20 p-2 rounded-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div class="text-left">
+<div class="font-bold">LINEを友だち追加</div>
+<div class="text-[10px] opacity-80">ご予約・お問い合わせも簡単！</div>
+</div>
+</a>
+<a class="insta-gradient text-white rounded-2xl p-4 flex items-center gap-4 hover:opacity-90 transition-opacity" href="https://www.instagram.com/xxxxx/" rel="noopener noreferrer" target="_blank">
+<div class="bg-white/20 p-2 rounded-xl">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<div class="text-left">
+<div class="font-bold">Instagramをフォロー</div>
+<div class="text-[10px] opacity-80">スイーツの写真を更新中！</div>
+</div>
+</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center z-10">
+<img alt="菓子屋のSNSを表示したスマートフォン" class="max-h-[300px] object-contain drop-shadow-2xl" src="images/sns-phone.jpg"/>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute -bottom-10 -right-10 opacity-10">
+<span class="material-symbols-outlined text-[200px] text-secondary">cake</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Access Section -->
+<section class="py-section-gap" id="access">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg bg-surface rounded-[40px] overflow-hidden shadow-soft">
+<div class="p-10 space-y-stack-md">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="font-accent-script text-accent-script text-primary italic">Access</span>
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+                            アクセス
+                            <span class="material-symbols-outlined text-secondary-fixed">bakery_dining</span>
+</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary bg-primary-container/30 p-2 rounded-full">location_on</span>
+<div>
+<p class="font-bold text-on-surface"><span class="text-xs text-primary">【仮】</span> 〒790-0000</p>
+<p class="text-on-surface-variant">愛媛県松山市〇〇町〇-〇</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary bg-primary-container/30 p-2 rounded-full">call</span>
+<p class="font-bold text-on-surface text-xl"><span class="text-xs text-primary">【仮】</span> 089-000-0000</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary bg-primary-container/30 p-2 rounded-full">schedule</span>
+<div>
+<p class="text-on-surface"><span class="text-xs font-bold text-primary">【仮】</span> 10:00 〜 19:00</p>
+<p class="text-xs text-on-surface-variant">定休日（仮）：水曜日・第2火曜日</p>
+</div>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant bg-surface-container-low rounded-xl p-3">※住所・電話番号・営業時間は公開前の仮情報です。</p>
+<div class="pt-2">
+<a class="border-2 border-primary-container text-primary px-8 py-2 rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors inline-flex items-center gap-2" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%84%9B%E5%AA%9B%E7%9C%8C%E6%9D%BE%E5%B1%B1%E5%B8%82" rel="noopener noreferrer" target="_blank">
+                            Googleマップで見る
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="h-[400px] lg:h-auto">
+<!-- MAP EMBED START: 下のプレースホルダーをGoogleマップのiframeに置き換えてください -->
+<div class="w-full h-full bg-surface-container flex items-center justify-center relative" id="map-embed">
+<div class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_center,_#fff8f6_0,_#ffe9e3_55%,_#fbd1d1_100%)]"></div>
+<div class="z-10 bg-white p-5 rounded-2xl shadow-lg border border-primary-container flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-strawberry text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-bold text-sm">菓子屋</span>
+<span class="text-xs text-on-surface-variant">Googleマップ埋め込み予定</span>
+</div>
+</div>
+<!-- MAP EMBED END -->
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap bg-background" id="faq">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-md text-headline-md inline-flex items-center gap-3">
+                    よくある質問
+                    <span class="material-symbols-outlined text-secondary-fixed">favorite</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-4">
+<details class="group bg-white rounded-2xl p-4 shadow-sm border border-primary-container/20">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                            予約はいつまでにすればいいですか？
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-sm border-t border-dotted pt-4">
+                            ホールケーキは3日前までにご予約をお願いいたします。カットケーキは当日お取り置きも可能ですので、お気軽にお電話ください。
+                        </p>
+</details>
+<details class="group bg-white rounded-2xl p-4 shadow-sm border border-primary-container/20">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                            アレルギー対応は可能ですか？
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-sm border-t border-dotted pt-4">
+                            はい、卵や乳製品不使用のケーキも承っております。製造ラインの洗浄など配慮いたしますが、微量でも反応が出る方は事前にお申し付けください。
+                        </p>
+</details>
+</div>
+<div class="space-y-4">
+<details class="group bg-white rounded-2xl p-4 shadow-sm border border-primary-container/20">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                            ホールケーキのサイズはどのくらいですか？
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-sm border-t border-dotted pt-4">
+                            4号（12cm/2-4人分）、5号（15cm/4-6人分）、6号（18cm/6-8人分）をご用意しております。それ以上のサイズもお気軽にご相談ください。
+                        </p>
+</details>
+<details class="group bg-white rounded-2xl p-4 shadow-sm border border-primary-container/20">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-on-surface">
+                            駐車場はありますか？
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-sm border-t border-dotted pt-4">
+                            店前に2台分の専用駐車場がございます。満車の場合は近隣のコインパーキングをご利用ください。
+                        </p>
+</details>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-surface-container pt-section-gap pb-8 border-t border-dotted border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">cake</span>
+<div class="font-headline-sm text-headline-sm text-primary">菓子屋</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">素材のおいしさを大切に、やさしいお菓子をお届けします。</p>
+<div class="flex gap-3">
+<a aria-label="LINEで問い合わせる" class="w-10 h-10 line-button rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span></a>
+<a aria-label="Instagramを見る" class="w-10 h-10 insta-gradient rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform" href="https://www.instagram.com/xxxxx/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined">photo_camera</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-sm text-primary uppercase tracking-widest border-b border-primary-container pb-2">メニュー</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#menu">ケーキ</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#menu">焼き菓子</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#menu">ギフト</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#menu">ドリンク</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-sm text-primary uppercase tracking-widest border-b border-primary-container pb-2">記念日ケーキ</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#anniversary">ホールケーキ一覧</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#anniversary">ご予約について</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#anniversary">オプション</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-sm text-primary uppercase tracking-widest border-b border-primary-container pb-2">その他</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#news">お知らせ</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-all inline-block" href="#faq">よくある質問</a></li>
+<li><span class="text-on-surface-variant/60">プライバシーポリシー（準備中）</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-section-gap pt-8 border-t border-outline-variant/30 text-center">
+<p class="text-[12px] text-on-surface-variant/70">© 2026 菓子屋 All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile navigation
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', String(!isOpen));
+                menuToggle.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
+                menuToggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'menu' : 'close';
+                mobileMenu.classList.toggle('hidden', isOpen);
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'メニューを開く');
+                    menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Simple Fade In Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
