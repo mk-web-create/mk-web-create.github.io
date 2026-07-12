@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>メニュー | 菓子屋レモン</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Epilogue:ital,wght@0,300;1,300&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#d3c96c",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#e5bdbd",
+                        "inverse-surface": "#442a22",
+                        "primary-fixed": "#ffdada",
+                        "surface": "#fff8f6",
+                        "on-tertiary-fixed": "#1d1b18",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#2c160e",
+                        "secondary-container": "#ede282",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#605e5a",
+                        "tertiary-fixed": "#e6e2dc",
+                        "inverse-on-surface": "#ffede8",
+                        "primary-fixed-dim": "#e5bdbd",
+                        "outline-variant": "#d2c3c4",
+                        "surface-variant": "#ffdbd0",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#504444",
+                        "primary": "#765657",
+                        "on-secondary-container": "#6c6410",
+                        "on-tertiary-container": "#6a6863",
+                        "on-surface": "#2c160e",
+                        "secondary": "#67600a",
+                        "surface-container-high": "#ffe2da",
+                        "surface-container": "#ffe9e3",
+                        "on-tertiary-fixed-variant": "#484742",
+                        "surface-dim": "#fbd1c4",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#ffdbd0",
+                        "on-primary-fixed": "#26181a",
+                        "secondary-fixed": "#f0e585",
+                        "outline": "#827474",
+                        "background": "#fff8f6",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#fff1ed",
+                        "on-secondary-fixed-variant": "#4e4715",
+                        "primary-container": "#fbd1d1",
+                        "on-primary-container": "#775858",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#201c00",
+                        "surface-tint": "#765657",
+                        "on-primary-fixed-variant": "#5c3f40",
+                        "tertiary-container": "#ede8e2",
+                        "tertiary-fixed-dim": "#cac6c0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1120px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-lg-mobile": ["Noto Serif JP", "serif"],
+                        "title-md": ["Noto Serif JP", "serif"],
+                        "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "display-lg": ["Noto Serif JP", "serif"],
+                        "headline-lg": ["Noto Serif JP", "serif"],
+                        "accent-script": ["Epilogue", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8f6;
+            color: #2c160e;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.08);
+        }
+        .lemon-pattern {
+            background-image: radial-gradient(#f0e585 0.8px, transparent 0.8px);
+            background-size: 24px 24px;
+        }
+        #recommended,
+        #cakes,
+        #whole-cakes,
+        #baked-goods,
+        #gifts {
+            scroll-margin-top: 100px;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid rgba(211, 195, 194, 0.45);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.06);
+        }
+        @media (max-width: 639px) {
+            .menu-hero-title {
+                font-size: 36px;
+                line-height: 1.35;
+            }
+            .category-links {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .category-links a {
+                justify-content: center;
+                text-align: center;
+                padding-inline: 12px;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md">
+<!-- Header -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 shadow-[0px_10px_30px_rgba(93,64,55,0.08)]">
+<div class="max-w-container-max mx-auto px-gutter py-3 lg:py-4 flex justify-between items-center relative">
+<a class="flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">bakery_dining</span>
+<span class="font-headline-lg text-xl lg:text-2xl font-bold text-on-background">菓子屋レモン</span>
+</a>
+<nav class="hidden lg:flex items-center gap-6 text-sm" aria-label="メインナビゲーション">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html">ホーム</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#about">お店について</a>
+<a aria-current="page" class="text-primary font-bold border-b-2 border-primary pb-1" href="menu.html">メニュー</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#anniversary">記念日ケーキ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#news">お知らせ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#access">アクセス</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#faq">よくある質問</a>
+</nav>
+<a class="hidden lg:inline-flex bg-primary-container text-on-primary-container px-6 py-2 rounded-full text-sm font-bold hover:opacity-80 transition-opacity" href="index.html#anniversary">予約はこちら</a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く" class="lg:hidden w-11 h-11 rounded-full bg-primary-container text-primary inline-flex items-center justify-center" id="menu-toggle" type="button">
+<span aria-hidden="true" class="material-symbols-outlined">menu</span>
+</button>
+<nav aria-label="モバイルナビゲーション" class="hidden absolute top-full left-gutter right-gutter mt-2 bg-surface rounded-3xl p-5 soft-shadow border border-primary-container/40 lg:hidden" id="mobile-menu">
+<div class="grid gap-1 text-sm font-bold text-on-surface-variant">
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="index.html">ホーム</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="index.html#about">お店について</a>
+<a aria-current="page" class="px-4 py-3 rounded-xl bg-primary-container text-primary" href="menu.html">メニュー</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="index.html#anniversary">記念日ケーキ</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="index.html#news">お知らせ</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="index.html#access">アクセス</a>
+<a class="px-4 py-3 rounded-xl hover:bg-surface-container" href="index.html#faq">よくある質問</a>
+<a class="mt-2 px-4 py-3 rounded-full bg-primary-container text-on-primary-container text-center" href="index.html#anniversary">予約はこちら</a>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<!-- Main Visual -->
+<section class="relative bg-surface-container-low overflow-hidden py-16 md:py-24">
+<div class="absolute inset-0 lemon-pattern opacity-30"></div>
+<div class="relative max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="inline-block p-4 rounded-full bg-secondary-container/50 mb-6 animate-bounce">
+<span class="material-symbols-outlined text-secondary text-4xl">bakery_dining</span>
+</div>
+<span class="font-accent-script italic text-primary text-lg">Menu</span>
+<h1 class="menu-hero-title font-display-lg text-display-lg text-on-background mt-2 mb-4 md:mb-6">お菓子のメニュー</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    毎日食べたい定番のお菓子から、季節限定のスイーツまで。<br class="hidden md:block"/>
+                    心温まるひとときを添える一品をご用意しています。
+                </p>
+</div>
+<!-- Decorative Illustrations -->
+<div class="absolute top-10 left-10 opacity-20 hidden md:block animate-pulse">
+<span class="material-symbols-outlined text-6xl text-secondary">cake</span>
+</div>
+<div class="absolute bottom-10 right-10 opacity-20 hidden md:block animate-pulse">
+<span class="material-symbols-outlined text-6xl text-primary">cookie</span>
+</div>
+</section>
+<!-- Breadcrumb -->
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6">
+<ul class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="index.html">ホーム</a></li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-bold">メニュー</span>
+</li>
+</ul>
+</nav>
+<!-- Category Nav -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12" aria-label="商品カテゴリー">
+<div class="category-links flex flex-wrap gap-3 justify-center">
+<a class="inline-flex px-6 py-3 rounded-full bg-primary text-on-primary shadow-sm hover:-translate-y-0.5 transition-transform" href="#recommended">おすすめ</a>
+<a class="inline-flex px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-primary transition-all" href="#cakes">ケーキ</a>
+<a class="inline-flex px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-primary transition-all" href="#whole-cakes">ホールケーキ</a>
+<a class="inline-flex px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-primary transition-all" href="#baked-goods">焼き菓子</a>
+<a class="inline-flex px-6 py-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim transition-all" href="#gifts">ギフト</a>
+</div>
+</section>
+<!-- Recommended Menu -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop section-gap mb-section-gap" id="recommended">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg text-primary inline-flex items-center gap-3"><span class="material-symbols-outlined text-secondary">favorite</span>おすすめ</h2>
+<div class="h-px bg-outline-variant flex-grow"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Strawberry Shortcake -->
+<div class="group relative bg-surface border border-outline-variant/30 rounded-lg p-6 soft-shadow hover:-translate-y-1 transition-transform">
+<div class="absolute top-4 left-4 z-10 bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full">人気</div>
+<div class="aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="苺のショートケーキ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm5ZpO_OUZIKoUSDOP9uo2Yhan_XZZb0jktI7jmvbzXLviPmdkVkLsAdPWLD6g7QKBtRjA9RpIeEtfuFce91pYLq0WIq7A3JrKmv08KBD_t3oLdF3Rj7YebLHZaOsHXbX2HSkqj2Ob1eL7HM6Q0lR0Mv1ClND60-Ke2-R93X3_KPXX5ri0Gfv9-FcGD59po8ArebMHdZJ0mI_COvlHKeSDsRBDqYzTr5FpQjIhfAMedtcgrWJZOAdJ_rXGhXWl_QveuWMUqX0CIXw"/>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-2">苺のショートケーキ</h4>
+<p class="text-on-surface-variant mb-4">口溶けの良いスポンジと、北海道産生クリームが苺の甘酸っぱさを引き立てます。</p>
+<p class="font-bold text-primary">¥520</p>
+</div>
+<!-- Seasonal Fruit Tart -->
+<div class="group relative bg-surface border border-outline-variant/30 rounded-lg p-6 soft-shadow hover:-translate-y-1 transition-transform">
+<div class="absolute top-4 left-4 z-10 bg-secondary text-on-secondary font-label-sm text-label-sm px-3 py-1 rounded-full">おすすめ</div>
+<div class="aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="季節のフルーツタルト" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB68Tr7im1Vcp1JsGu8gL4f6Cq7Y5Ytivhg5obhTE5tY-Hh1rcMXd5fbW1h4ljAKQboBAoMPp6irhDPMrZ7I7uLLSGb1MVj_S6Hhl-DH5GPi_T3tNjJzPBhe5mOPVCk5QPpcI5nkMb_W05DJmwjab5hBRZTpCmpkJuG909-LLDxW9FZzbrCJXlF5QxTdNOLqkUYWRIRtb5YTr6reiUteWDR0avi4i7bWhTrK4K0tPLz-Nfa1oxIS4hayjANfzDcvQfzO4uAdO2LoDM"/>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-2">季節のフルーツタルト</h4>
+<p class="text-on-surface-variant mb-4">サクサクのタルト生地に、旬のフルーツを贅沢に盛り合わせました。</p>
+<p class="font-bold text-primary">¥580</p>
+</div>
+<!-- Lemon Madeleines -->
+<div class="group relative bg-surface border border-outline-variant/30 rounded-lg p-6 soft-shadow hover:-translate-y-1 transition-transform">
+<div class="absolute top-4 left-4 z-10 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-3 py-1 rounded-full">看板商品</div>
+<div class="aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="瀬戸内レモンのマドレーヌ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlPBsdLIgF6ikRzZTgofIAgwFJAFa9wMA2nMhU1aXqBT04aGDWqPz4I0Fa8lzi804rsmC5RMNsjh1315Jv3acoR7LtKCHFp6zpezp3RDbgFIKLP08mCBpkNTp4isSvhRm6M7qQUChHQlR-DhHutgWBovEIu_kCXloXdaNoCt8cly36aDalkfkTL3doGUqW6wK2B0lbf_omDdu1EpoSVEpYXN9gH9fpAV1xTOMRmHmeucrQYe9Nn-OlQFJTeCQ1MwZVCtT38RE3_tA"/>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-2">瀬戸内レモンのマドレーヌ</h4>
+<p class="text-on-surface-variant mb-4">レモン果汁と皮をたっぷり練り込んだ、当店の看板焼き菓子です。</p>
+<p class="font-bold text-primary">¥240</p>
+</div>
+</div>
+</section>
+<!-- Cake Menu Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap" id="cakes">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 text-center inline-flex w-full justify-center items-center gap-3"><span class="material-symbols-outlined text-secondary">cake</span>ケーキ</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-gutter">
+<!-- Item 1 -->
+<article class="product-card flex flex-col">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-surface-container border border-outline-variant/20">
+<img alt="ガトーショコラ" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCUmVgmkfDBpR8CRGKH_j-7ZwfKS-xf1hQvsh28A4ykcZv50dPioLn_GHqQUS8g-1364vdidkiYT58XHbC6qvLMkTbPTT13l0kbhzGVm9YH93RdOD78_19K_m_tePiJpJLsiBkDthP4Cnui9Fl7UU_H0L1vKfRNNpcBLOjo86I4kyqvAEkpGxRjw0br1GkPDTRuMOIShZ7O_nTHOkzl5IV847vnFAfMi2c1ABbh7kQ7i3CrJlCzk8sMN2AlxRmqplL42hUZ1GzynU"/>
+</div>
+<div class="px-2">
+<h5 class="font-title-md text-title-md text-on-surface">ガトーショコラ</h5>
+<p class="text-label-sm text-on-surface-variant mb-2">濃厚でしっとりとした大人の味わい</p>
+<p class="font-bold text-primary">¥480</p>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="product-card flex flex-col">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-surface-container border border-outline-variant/20">
+<img alt="ベイクドチーズケーキ" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgv21_zyrCet5vqtrJQTeJTkiDFflJBHL2laLeGhWxYE5IUP5GglthYzpI3jsl1_rjFywnFW_lI92LyGipWX_mqyHvzIYlywtT2I7CKQzundzYslkdI-SrNmLzKxSm46egZenMhkv3Z4eni-MnEP-WB2IqFADl_tWf-VrMeuBcy5F-DCqlEB_hcOt9S5CLUJVFeiKGmwSAgf6KdYn82dpFF8xgrKiuxaSUQf2rkFTUzjo4XgWxdSYeRMDV8PtVRD-PCOyYmUSuRAU"/>
+</div>
+<div class="px-2">
+<h5 class="font-title-md text-title-md text-on-surface">ベイクドチーズケーキ</h5>
+<p class="text-label-sm text-on-surface-variant mb-2">数種類のチーズをブレンドしました</p>
+<p class="font-bold text-primary">¥450</p>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="product-card flex flex-col">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-surface-container border border-outline-variant/20">
+<img alt="レモンケーキ" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8n5Bg5nL7udfg-rra_1YGnlb3iAomd03j1sQdEmDq2C2VTZvq-AsfAWV89bJhgFNeoE5Le3npaGv2ITnInaqSDc6N3XywkWk_KYA1uaRDD-kjei8FeXbwVeosVH1IJiF18-tiefM500MBX5tQuTf1zifRjqXldXc60lz_Tu0Xx_GK1TTjlJXa51IpW8445VNXTdYo8O2rGw5n4C69_AHUfBjAKVdjIiLR3XMaXUx1LXqOxBtMr8BbLr1f3TxDq_oQR0khzv30pwo"/>
+</div>
+<div class="px-2">
+<h5 class="font-title-md text-title-md text-on-surface">レモンケーキ</h5>
+<p class="text-label-sm text-on-surface-variant mb-2">爽やかな酸味が広がる自信作</p>
+<p class="font-bold text-primary">¥420</p>
+</div>
+</article>
+<!-- Item 4 -->
+<article class="product-card flex flex-col">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-surface-container border border-outline-variant/20">
+<img alt="とろけるプリン" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB94eqyf0Pu_3Ye9-VkgJa2DVzoU_qnKkhetuzLmNqy7-HRiK68lCJiQYp35EI9eeybF_HISEnWqq62pEREWN-W-OChOUulgqa_o0z3kKzIkCo6Yv41OFZxRg8jy_AErEG9idOSOU0RRfX1KENIgMdo-Tzno-V5IlvT4Wist8R2gQ8-5QRhodt-1PR3-LKRlavDK_FfvmieAJz55izf8B7e7PosHhmRZztgwfsouoW3szXus2iwOjXOAXrwD8mPP7WvLbyHPESM7TI"/>
+</div>
+<div class="px-2">
+<h5 class="font-title-md text-title-md text-on-surface">とろけるプリン</h5>
+<p class="text-label-sm text-on-surface-variant mb-2">卵のコクをしっかりと感じる滑らかさ</p>
+<p class="font-bold text-primary">¥300</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Hall Cakes -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap" id="whole-cakes">
+<div class="bg-primary-container/30 rounded-lg p-8 md:p-12">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<img alt="お祝い用のいちごのホールケーキ" class="rounded-lg soft-shadow w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKHMP0Zt8BzzbLxIo1Vu1ogB4fwoBLab2dnP9gVhLB7TCVEM6tE_VVNMszdoJQ-cXLMEJJfgyyRt40ntDErhlEbbdlghB3DURBnFcQO794XXtc2Z-gdExv3GZsmFBDCD5-Cr9pnLkTquWiKoFrod8Him3PUdDBWfLxo7LWUQcmlzPC5M0ZjKhbhWAzImerxfQHAc0rIL7zD7kr0C3XJOwLfi_JE9MMNO-R3SKOxujCO-eKQKvzqhkUIM0BG_uJPie-FV2a2Nr9-Tc"/>
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6 inline-flex items-center gap-3"><span class="material-symbols-outlined text-secondary">favorite</span>ホールケーキ</h2>
+<p class="text-on-surface-variant mb-6">大切なお祝いの日に、特別なケーキを。サイズ変更やメッセージプレート、キャンドルのご相談も承ります。</p>
+<ul class="space-y-4 mb-8">
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span>4号 (12cm / 2-4名様)</span>
+<span class="font-bold">¥2,800〜</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span>5号 (15cm / 4-6名様)</span>
+<span class="font-bold">¥3,600〜</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span>6号 (18cm / 6-8名様)</span>
+<span class="font-bold">¥4,500〜</span>
+</li>
+</ul>
+<div class="flex flex-wrap gap-4 items-center">
+<span class="flex items-center gap-1 text-label-sm text-primary">
+<span class="material-symbols-outlined text-sm">schedule</span>3日前までの予約推奨
+                            </span>
+<span class="flex items-center gap-1 text-label-sm text-primary">
+<span class="material-symbols-outlined text-sm">edit</span>メッセージプレート対応
+                            </span>
+</div>
+<a class="mt-8 inline-flex items-center gap-2 bg-[#06C755] text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-all" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined">chat</span> LINEで予約相談
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Baked Goods & Gifts -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Baked Goods -->
+<div id="baked-goods">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 inline-flex items-center gap-3"><span class="material-symbols-outlined text-secondary">cookie</span>焼き菓子</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface rounded-lg border border-outline-variant/30 text-center">
+<h6 class="font-bold mb-1">フィナンシェ</h6>
+<p class="text-label-sm text-on-surface-variant">¥220</p>
+</div>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant/30 text-center">
+<h6 class="font-bold mb-1">チョコブラウニー</h6>
+<p class="text-label-sm text-on-surface-variant">¥280</p>
+</div>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant/30 text-center">
+<h6 class="font-bold mb-1">バタークッキー</h6>
+<p class="text-label-sm text-on-surface-variant">¥180</p>
+</div>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant/30 text-center">
+<h6 class="font-bold mb-1">スノーボール</h6>
+<p class="text-label-sm text-on-surface-variant">¥350</p>
+</div>
+</div>
+</div>
+<!-- Gifts -->
+<div id="gifts">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 inline-flex items-center gap-3"><span class="material-symbols-outlined text-secondary">redeem</span>ギフト</h2>
+<div class="bg-secondary-container/20 rounded-lg p-6 border border-secondary-container/50">
+<div class="aspect-[16/9] rounded-lg overflow-hidden mb-4">
+<img alt="焼き菓子を詰め合わせたギフトボックス" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBBRLWBna5eCTw_GDbM73dV50ijBq3KwbY8SrolCHPaDCtHZH-dy85gFofvn-SS7kTeyS7_hNQaZNeVkU5ao97dGRbW4EI62mrTqL6D-SkxybmejxTXmW7ErP5qxLym3im8t6-CaFbsBHhd9CbKLFdtr5lDGfIk9q-YemNKVjCkC6D8WXS-hHo6rU5BdJ22ls5pyOEejDUkmFc0K4lB7D9wQ1Pys9hH-ZCvV-6_MqK10LfrwsLTCmbnecuNS-6PZwj5izEiNK2cNw"/>
+</div>
+<p class="font-bold text-on-background mb-1">ギフトボックス（S/M/L）</p>
+<p class="text-on-surface-variant mb-4">ちょっとした贈り物から、大切な方へのご挨拶まで。</p>
+<p class="font-bold text-primary">¥1,200〜</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Notice Box -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="bg-secondary-container/30 border border-secondary/20 rounded-lg p-6 md:p-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">info</span>
+<div>
+<h4 class="font-title-md text-title-md text-secondary mb-4">ご注文に際してのお知らせ</h4>
+<ul class="space-y-2 text-on-surface-variant text-body-md">
+<li>・アレルギー物質（卵、乳、小麦など）についてはスタッフまでお尋ねください。</li>
+<li>・当日の取り置きは、お電話または店頭にて承っております。</li>
+<li>・ホールケーキのキャンセル・変更は前日の正午までにお願いいたします。</li>
+<li>・季節によりフルーツの内容が変更になる場合がございます。</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-high py-20 text-center">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">ご予約・お取り置きはLINEから</h2>
+<p class="text-on-surface-variant mb-10 max-w-xl mx-auto">
+                    公式LINEでは、季節の新作情報やお得なクーポンも配信中。トーク画面からお気軽にお問い合わせください。
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<a class="w-full md:w-auto flex items-center justify-center gap-2 bg-[#06C755] text-white px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all text-lg" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined">chat</span> LINEで問い合わせ
+                    </a>
+<a class="w-full md:w-auto flex items-center justify-center gap-2 bg-surface text-primary border border-primary px-10 py-4 rounded-full font-bold hover:bg-primary/5 transition-all text-lg" href="index.html">
+<span class="material-symbols-outlined">arrow_back</span> トップページへ戻る
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container pt-section-gap pb-8 border-t border-dotted border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<a class="flex items-center gap-2 mb-4" href="index.html">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">cake</span>
+<span class="font-title-md text-xl text-primary">菓子屋レモン</span>
+</a>
+<p class="text-on-surface-variant text-sm mb-4">素材のおいしさを大切に、やさしいお菓子をお届けします。</p>
+<div class="flex gap-3">
+<a aria-label="LINEで問い合わせる" class="w-10 h-10 bg-[#06C755] rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined">chat</span></a>
+<a aria-label="Instagramを見る" class="w-10 h-10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform bg-[linear-gradient(45deg,#f09433,#dc2743,#bc1888)]" href="https://www.instagram.com/xxxxx/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined">photo_camera</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="text-sm font-bold text-primary tracking-widest border-b border-primary-container pb-2">メニュー</h3>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="#recommended">おすすめ</a></li>
+<li><a class="hover:text-primary" href="#cakes">ケーキ</a></li>
+<li><a class="hover:text-primary" href="#baked-goods">焼き菓子</a></li>
+<li><a class="hover:text-primary" href="#gifts">ギフト</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="text-sm font-bold text-primary tracking-widest border-b border-primary-container pb-2">記念日ケーキ</h3>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="#whole-cakes">ホールケーキ一覧</a></li>
+<li><a class="hover:text-primary" href="index.html#anniversary">ご予約について</a></li>
+<li><a class="hover:text-primary" href="https://lin.ee/xxxxx" rel="noopener noreferrer" target="_blank">LINEで相談</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="text-sm font-bold text-primary tracking-widest border-b border-primary-container pb-2">サイト案内</h3>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="index.html">ホーム</a></li>
+<li><a class="hover:text-primary" href="index.html#about">お店について</a></li>
+<li><a aria-current="page" class="font-bold text-primary" href="menu.html">メニュー</a></li>
+<li><a class="hover:text-primary" href="index.html#news">お知らせ</a></li>
+<li><a class="hover:text-primary" href="index.html#access">アクセス</a></li>
+<li><a class="hover:text-primary" href="index.html#faq">よくある質問</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-section-gap pt-8 border-t border-outline-variant/30 text-center">
+<p class="text-xs text-on-surface-variant/70">© 2026 菓子屋レモン All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', String(!isOpen));
+                menuToggle.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
+                menuToggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'menu' : 'close';
+                mobileMenu.classList.toggle('hidden', isOpen);
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'メニューを開く');
+                    menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body></html>

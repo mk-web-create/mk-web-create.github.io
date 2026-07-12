@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>地域密着のWebサイト制作 | Portfolio</title>
-  <meta name="description" content="地域密着のWebサイト制作。集客につながるLPを丁寧に制作します。">
+  <title>愛媛県松山市のホームページ制作｜MK Web Create</title>
+  <meta name="description" content="愛媛県松山市を拠点に、個人店・中小企業向けのLPやホームページを制作しています。WordPress対応、LINE・Instagram・Googleマップへの導線設置もご相談ください。">
+  <meta property="og:title" content="愛媛県松山市のホームページ制作｜MK Web Create">
+  <meta property="og:description" content="愛媛県松山市を拠点に、個人店・中小企業向けのLPやホームページを制作しています。WordPress対応、LINE・Instagram・Googleマップへの導線設置もご相談ください。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kouichi228228.github.io/portfolio/">
+  <meta property="og:image" content="https://kouichi228228.github.io/portfolio/assets/images/kashiya-lemon.jpg">
+  <meta property="og:site_name" content="MK Web Create">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,7 +21,8 @@
           colors: {
             navy: '#0f2747',
             ink: '#1f2a37',
-            mist: '#f5f8fb'
+            mist: '#f5f8fb',
+            line: '#06c755'
           },
           fontFamily: {
             sans: ['Noto Sans JP', 'system-ui', 'sans-serif']
@@ -23,72 +32,153 @@
     };
   </script>
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
     @media (min-width: 1024px) {
       html {
         font-size: 17px;
       }
     }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 100;
+      background: #0f2747;
+      color: #fff;
+      padding: .75rem 1rem;
+      border-radius: .375rem;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
   </style>
 </head>
-<body class="bg-white text-ink antialiased">
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-      <a href="#" class="text-base font-bold tracking-wide text-navy">Portfolio</a>
-      <nav class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
-        <a href="#about" class="transition hover:text-navy">自己紹介</a>
-        <a href="#works" class="transition hover:text-navy">制作サンプル</a>
-        <a href="#skills" class="transition hover:text-navy">使用技術</a>
-        <a href="#contact" class="transition hover:text-navy">お問い合わせ</a>
+<body id="top" class="bg-white text-ink antialiased">
+  <a href="#main" class="skip-link">本文へ移動</a>
+
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3">
+      <a href="#top" class="flex min-w-0 flex-col leading-tight text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="MK Web Create トップへ">
+        <span class="text-base font-bold tracking-wide sm:text-lg">MK Web Create</span>
+        <span class="mt-1 text-[11px] font-semibold text-slate-500 sm:text-xs">愛媛県松山市のホームページ制作</span>
+      </a>
+
+      <nav class="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex" aria-label="主要メニュー">
+        <a href="#services" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">サービス</a>
+        <a href="#works" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作事例</a>
+        <a href="#flow" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作の流れ</a>
+        <a href="#price" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">料金</a>
+        <a href="#about" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">自己紹介</a>
+        <a href="#contact" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">お問い合わせ</a>
       </nav>
-      <a href="#contact" class="rounded-md bg-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">相談する</a>
+
+      <div class="flex items-center gap-2">
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="hidden rounded-md bg-line px-4 py-2.5 text-sm font-bold text-white transition hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-line sm:inline-flex">
+          LINEで無料相談
+        </a>
+        <button id="menu-button" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-300 bg-white text-navy transition hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy lg:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">
+          <span class="sr-only">メニュー</span>
+          <span aria-hidden="true" class="flex flex-col gap-1.5">
+            <span class="block h-0.5 w-5 bg-navy"></span>
+            <span class="block h-0.5 w-5 bg-navy"></span>
+            <span class="block h-0.5 w-5 bg-navy"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white lg:hidden">
+      <nav class="mx-auto grid max-w-7xl gap-1 px-5 py-4 text-sm font-semibold text-slate-700" aria-label="スマートフォンメニュー">
+        <a href="#services" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">サービス</a>
+        <a href="#works" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">制作事例</a>
+        <a href="#flow" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">制作の流れ</a>
+        <a href="#price" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">料金</a>
+        <a href="#about" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">自己紹介</a>
+        <a href="#contact" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">お問い合わせ</a>
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-md bg-line px-4 py-3 text-center font-bold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-line">LINEで無料相談</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="bg-mist">
-      <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-9 px-5 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-16 lg:gap-12">
         <div>
-          <p class="mb-4 inline-flex rounded-md border border-slate-300 bg-white px-3 py-1 text-sm font-semibold text-navy">地域のお店・企業向けLP制作</p>
-          <h1 class="text-4xl font-bold leading-tight text-navy sm:text-5xl lg:text-6xl">地域密着のWebサイト制作</h1>
-          <p class="mt-5 text-xl font-semibold leading-relaxed text-slate-700 sm:text-2xl">集客につながるLPを制作します</p>
-          <p class="mt-6 max-w-xl leading-8 text-slate-600">伝えたい魅力を整理し、見る人にわかりやすく届く1ページ構成のWebサイトを丁寧に制作します。</p>
+          <p class="mb-4 inline-flex rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-bold text-navy">愛媛県松山市｜個人店・中小企業向け</p>
+          <h1 class="max-w-3xl text-3xl font-bold leading-tight text-navy sm:text-5xl lg:text-[3.25rem]">
+            お店や会社の魅力を整理し、<br class="hidden sm:block">
+            来店・お問い合わせにつながるホームページを制作します。
+          </h1>
+          <p class="mt-6 max-w-2xl leading-8 text-slate-600">LPや小規模ホームページ、WordPressを使用した更新可能なサイトに対応しています。LINE・Instagram・Googleマップなど、集客につながる導線も含めてご提案します。</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#works" class="rounded-md bg-navy px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800">制作サンプルを見る</a>
-            <a href="#contact" class="rounded-md border border-navy px-6 py-3 text-center text-sm font-bold text-navy transition hover:bg-white">お問い合わせ</a>
+            <a href="#works" class="inline-flex min-h-[50px] items-center justify-center rounded-md bg-navy px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作事例を見る</a>
+            <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[50px] items-center justify-center rounded-md border border-line bg-white px-6 py-3 text-center text-sm font-bold text-line transition hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-line">LINEで無料相談</a>
           </div>
         </div>
-        <div class="relative">
-          <img class="h-[340px] w-full rounded-lg object-cover shadow-xl sm:h-[430px] lg:h-[500px]" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="ノートパソコンと作業デスク">
-          <div class="absolute -bottom-6 left-5 right-5 rounded-lg bg-white p-5 shadow-lg sm:left-8 sm:right-auto sm:w-80">
+        <div class="relative pb-8 sm:pb-10 md:pb-0">
+          <img class="h-[290px] w-full rounded-lg object-cover shadow-lg sm:h-[350px] lg:h-[390px]" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" width="1200" height="800" alt="ノートパソコンと作業デスク">
+          <div class="absolute bottom-0 left-5 right-5 rounded-lg bg-white p-5 shadow-lg ring-1 ring-slate-100 sm:left-8 sm:right-auto sm:w-80 md:-bottom-6">
             <p class="text-sm font-bold text-navy">丁寧なヒアリング</p>
-            <p class="mt-2 text-sm leading-6 text-slate-600">目的や強みを整理し、地域のお客様に伝わるページ設計を行います。</p>
+            <p class="mt-2 text-sm leading-6 text-slate-600">目的や強みを整理し、必要な内容と導線を一緒に考えます。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="px-5 py-20">
-      <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-        <div>
-          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">About</p>
-          <h2 class="mt-3 text-3xl font-bold text-navy">自己紹介</h2>
+    <section id="services" class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Services</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">対応できること</h2>
+          <p class="mt-4 leading-8 text-slate-600">目的やご予算に合わせて、必要な内容を整理しながらご提案します。</p>
         </div>
-        <div class="border-l-4 border-navy bg-mist p-6 md:p-8">
-          <p class="text-lg leading-9 text-slate-700">愛媛県在住。電気設計職として働きながらWeb制作を学習しています。
-設計業務で培った論理的な考え方を活かし、お客様の想いや課題を整理しながら、
-分かりやすく成果につながるWebサイト制作を心掛けています。
-丁寧なコミュニケーションと迅速な対応を大切にし、一つひとつのご依頼に誠実に取り組みます。</p>
-          <div class="mt-6 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-md bg-white p-5">
-              <p class="font-bold text-navy">強み</p>
-              <p class="mt-2 text-sm leading-6 text-slate-600">電気設計の経験を活かし、情報整理や課題解決を意識したサイト制作を行います。</p>
-            </div>
-            <div class="rounded-md bg-white p-5">
-              <p class="font-bold text-navy">姿勢</p>
-              <p class="mt-2 text-sm leading-6 text-slate-600">ヒアリングを大切にし、お客様が相談しやすいパートナーを目指しています。</p>
-            </div>
-          </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-bold text-navy">LP・1ページサイト</h3>
+            <p class="mt-4 flex-1 leading-7 text-slate-600">商品やサービス、お店の魅力を1ページに分かりやすく整理します。スマートフォン対応やお問い合わせ導線も含めて制作します。</p>
+            <ul class="mt-5 grid gap-2 text-sm text-slate-600">
+              <li>・オリジナルデザイン</li>
+              <li>・スマートフォン対応</li>
+              <li>・LINE・SNSへの導線</li>
+              <li>・お問い合わせボタン</li>
+            </ul>
+            <p class="mt-6 border-t border-slate-200 pt-5 text-sm font-bold text-slate-500">料金目安 <span class="ml-2 text-xl text-navy">30,000円〜</span></p>
+          </article>
+
+          <article class="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-bold text-navy">小規模ホームページ</h3>
+            <p class="mt-4 flex-1 leading-7 text-slate-600">トップページ、サービス紹介、店舗・会社情報、お問い合わせなど、3〜5ページ程度のホームページを制作します。</p>
+            <ul class="mt-5 grid gap-2 text-sm text-slate-600">
+              <li>・3〜5ページ程度</li>
+              <li>・スマートフォン対応</li>
+              <li>・基本的なSEO設定</li>
+              <li>・公開作業のサポート</li>
+            </ul>
+            <p class="mt-6 border-t border-slate-200 pt-5 text-sm font-bold text-slate-500">料金目安 <span class="ml-2 text-xl text-navy">50,000円〜</span></p>
+          </article>
+
+          <article class="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-bold text-navy">WordPress対応</h3>
+            <p class="mt-4 flex-1 leading-7 text-slate-600">お知らせ、メニュー、施工事例などを、お客様自身で更新できるホームページを制作します。</p>
+            <ul class="mt-5 grid gap-2 text-sm text-slate-600">
+              <li>・お知らせ投稿</li>
+              <li>・メニュー・施工事例の更新</li>
+              <li>・管理画面の操作説明</li>
+              <li>・更新箇所に応じた設計</li>
+            </ul>
+            <p class="mt-6 border-t border-slate-200 pt-5 text-sm font-bold text-slate-500">料金目安 <span class="ml-2 text-lg text-navy">内容に応じてお見積り</span></p>
+          </article>
         </div>
+
+        <p class="mt-6 rounded-md bg-mist px-4 py-3 text-sm leading-7 text-slate-600">※ページ数や機能、原稿・画像の準備状況によって料金は変わります。まずはお気軽にご相談ください。</p>
       </div>
     </section>
 
@@ -97,150 +187,325 @@
         <div class="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Works</p>
-            <h2 class="mt-3 text-3xl font-bold text-navy">制作サンプル</h2>
+            <h2 class="mt-3 text-3xl font-bold text-navy">制作事例</h2>
           </div>
-          <p class="max-w-xl leading-7 text-slate-600">地域ビジネスの魅力が伝わり、問い合わせにつながる構成を意識して制作した自主制作サイトです。</p>
+          <p class="max-w-xl leading-7 text-slate-600">個人店や地域ビジネスを想定し、目的・導線・スマートフォンでの見やすさを意識して制作した自主制作サイトです。</p>
         </div>
 
         <div class="grid gap-7 md:grid-cols-2">
-           <article class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
-            <img class="h-64 w-full object-cover lg:h-72" src="./images/yamaura.png" alt="空間デザイン事業LPのイメージ">
-            <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-2xl font-bold text-navy">空間デザイン事業LP</h3>
-              <p class="mt-4 leading-7 text-slate-600">不動産オーナーや民泊運営者向けの空間デザイン事業を想定して自主制作したデモサイトです。サービス内容や施工事例、問い合わせ導線が伝わる構成にしました。</p>
-              <div class="mt-5 border-t border-slate-200 pt-5">
-                <p class="text-sm font-bold text-navy">制作ポイント</p>
-                <p class="mt-2 text-sm leading-6 text-slate-600">ホームステージング・民泊デザイン・リフォーム提案などのサービス内容を整理し、信頼感と問い合わせにつながる導線を意識して制作しました。</p>
-              </div>
-              <a href="./works/yamaura-crowdworks-sample/index.html" class="mt-auto inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800">
-                サイトを見る
-              </a>
-            </div>
-          </article>
           <article class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
-            <img class="h-64 w-full object-cover lg:h-72" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="工務店LPのイメージ">
+            <img class="h-64 w-full object-cover lg:h-72" src="./images/yamaura.png" width="1338" height="834" loading="lazy" alt="空間デザイン事業LPのトップページ">
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-2xl font-bold text-navy">工務店LP</h3>
-              <p class="mt-4 leading-7 text-slate-600">施工事例と家づくりへのこだわりを伝え、資料請求や相談につなげるランディングページです。</p>
-              <div class="mt-5 border-t border-slate-200 pt-5">
-                <p class="text-sm font-bold text-navy">制作ポイント</p>
-                <p class="mt-2 text-sm leading-6 text-slate-600">信頼感を重視し、実績・強み・問い合わせまでの流れが自然に伝わる構成にしました。</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">自主制作</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">1ページ</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">レスポンシブ対応</span>
               </div>
-              <a href="./works/komuten-lp.html" class="mt-auto inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800">
-                サイトを見る
+              <h3 class="mt-4 text-2xl font-bold text-navy">空間デザイン事業LP</h3>
+              <p class="mt-4 leading-7 text-slate-600">不動産オーナーや民泊運営者向けの空間デザイン事業を想定した自主制作LPです。サービス紹介、施工事例、お問い合わせ導線が自然に伝わる構成にしました。</p>
+              <dl class="mt-5 grid gap-3 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
+                <div><dt class="font-bold text-navy">対象</dt><dd>不動産オーナー、民泊運営者</dd></div>
+                <div><dt class="font-bold text-navy">担当範囲</dt><dd>構成、デザイン、コーディング</dd></div>
+                <div><dt class="font-bold text-navy">特徴</dt><dd>サービス紹介、施工事例、お問い合わせ導線</dd></div>
+              </dl>
+              <a href="./works/yamaura-crowdworks-sample/index.html" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="空間デザイン事業LPのサイトを見る 別タブで開きます">
+                サイトを見る（別タブ）
               </a>
             </div>
           </article>
+
           <article class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
-            <img class="h-64 w-full object-cover lg:h-72" src="./images/hero.png" alt="たこ焼き店LPのイメージ">
+            <img class="h-64 w-full object-cover lg:h-72" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" width="1200" height="800" loading="lazy" alt="工務店LPの住宅イメージ">
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-2xl font-bold text-navy">たこ焼き店LP</h3>
-              <p class="mt-4 leading-7 text-slate-600">飲食店を想定して自主制作したデモサイトです。メニューの魅力や店舗の雰囲気、アクセス情報が伝わる構成にしました。</p>
-              <div class="mt-5 border-t border-slate-200 pt-5">
-                <p class="text-sm font-bold text-navy">制作ポイント</p>
-                <p class="mt-2 text-sm leading-6 text-slate-600">スマホで見やすい構成、人気メニューの見せ方、LINEやSNSへの導線を意識して制作しました。</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">自主制作</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">1ページ</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">資料請求導線</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">レスポンシブ対応</span>
               </div>
-              <a href="./works/takoyaki.html" class="mt-auto inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800">
-                サイトを見る
+              <h3 class="mt-4 text-2xl font-bold text-navy">工務店LP</h3>
+              <p class="mt-4 leading-7 text-slate-600">地域の工務店を想定した自主制作LPです。施工事例、家づくりの強み、資料請求・相談導線が伝わるように整理しました。</p>
+              <dl class="mt-5 grid gap-3 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
+                <div><dt class="font-bold text-navy">対象</dt><dd>地域の工務店</dd></div>
+                <div><dt class="font-bold text-navy">担当範囲</dt><dd>構成、デザイン、コーディング</dd></div>
+                <div><dt class="font-bold text-navy">特徴</dt><dd>施工事例、家づくりの強み、資料請求・相談導線</dd></div>
+              </dl>
+              <a href="./works/komuten-lp.html" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="工務店LPのサイトを見る 別タブで開きます">
+                サイトを見る（別タブ）
               </a>
             </div>
           </article>
-         <article class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
-            <img class="h-64 w-full object-cover lg:h-72" src="./works/kasiyalemon-sample/images/anniversary-cake.jpg" alt="ケーキ屋ホームページ">
+
+          <article class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
+            <img class="h-64 w-full object-cover lg:h-72" src="./images/hero.png" width="1672" height="941" loading="lazy" alt="たこ焼き店LPのトップページ">
             <div class="flex flex-1 flex-col p-6">
-              <h3 class="text-2xl font-bold text-navy">ケーキ屋ホームページ</h3>
-              <p class="mt-4 leading-7 text-slate-600">街のケーキ屋さんを想定したホームページ制作デモです。淡いピンクとレモンイエローを基調に、可愛らしく温かい雰囲気でデザインしました。トップページとメニュー一覧ページを制作し、WordPress化によりお知らせ・期間限定メニューを管理画面から更新できる構成にしています。</p>
-              <div class="mt-5 border-t border-slate-200 pt-5">
-                <p class="text-sm font-bold text-navy">制作ポイント</p>
-                <p class="mt-2 text-sm leading-6 text-slate-600">LINE予約・Instagram・Googleマップへの導線を設置し、来店や予約につながる構成を意識しました。お知らせや季節限定メニューをお店側で更新できる点も特徴です。</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">自主制作</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">1ページ</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">飲食店</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">LINE・SNS導線</span>
               </div>
-              <a href="./works/kasiyalemon-sample/index.html" class="mt-auto inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800">
-                サイトを見る
+              <h3 class="mt-4 text-2xl font-bold text-navy">たこ焼き店LP</h3>
+              <p class="mt-4 leading-7 text-slate-600">飲食店を想定した自主制作LPです。人気メニュー、店舗情報、LINE・SNSへの導線を、スマートフォンでも見やすい構成にしました。</p>
+              <dl class="mt-5 grid gap-3 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
+                <div><dt class="font-bold text-navy">対象</dt><dd>飲食店</dd></div>
+                <div><dt class="font-bold text-navy">担当範囲</dt><dd>構成、デザイン、コーディング</dd></div>
+                <div><dt class="font-bold text-navy">特徴</dt><dd>人気メニュー、店舗情報、LINE・SNS導線</dd></div>
+              </dl>
+              <a href="./works/takoyaki.html" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="たこ焼き店LPのサイトを見る 別タブで開きます">
+                サイトを見る（別タブ）
               </a>
             </div>
           </article>
+
+          <article class="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md ring-2 ring-navy/20">
+            <div class="absolute left-4 top-4 z-10 rounded-md bg-navy px-3 py-1 text-xs font-bold text-white">おすすめ事例</div>
+            <img class="h-64 w-full object-cover lg:h-72" src="./assets/images/kashiya-lemon.jpg" width="1265" height="712" loading="lazy" alt="菓子屋レモンのホームページトップページ">
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">自主制作</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">2ページ</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">WordPress対応</span>
+                <span class="rounded-md bg-mist px-3 py-1 text-xs font-bold text-navy">レスポンシブ対応</span>
+              </div>
+              <h3 class="mt-4 text-2xl font-bold text-navy">菓子屋レモン｜ケーキ屋ホームページ</h3>
+              <p class="mt-4 leading-7 text-slate-600">Instagramだけでは伝えにくい定番商品や店舗情報を整理し、来店や予約につなげるホームページを想定して制作しました。</p>
+              <dl class="mt-5 grid gap-3 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
+                <div><dt class="font-bold text-navy">対象</dt><dd>街のケーキ屋</dd></div>
+                <div><dt class="font-bold text-navy">担当範囲</dt><dd>構成、デザイン、コーディング、WordPress化</dd></div>
+                <div><dt class="font-bold text-navy">機能</dt><dd>お知らせ、期間限定メニューの更新</dd></div>
+                <div><dt class="font-bold text-navy">導線</dt><dd>LINE予約、Instagram、Googleマップ</dd></div>
+              </dl>
+              <p class="mt-4 text-xs leading-6 text-slate-500">※デモサイトは静的HTML版です。WordPress化により、お知らせ・期間限定メニューを管理画面から更新できる構成を想定しています。</p>
+              <a href="./works/kashiya-lemon/index.html" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="ケーキ屋ホームページのサイトを見る 別タブで開きます">
+                サイトを見る（別タブ）
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Policy</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">大切にしていること</h2>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <article class="rounded-lg border border-slate-200 p-6">
+            <h3 class="text-xl font-bold text-navy">目的や強みを整理</h3>
+            <p class="mt-3 leading-7 text-slate-600">掲載内容が固まっていない場合でも、ヒアリングを通してお店やサービスの魅力を整理します。</p>
+          </article>
+          <article class="rounded-lg border border-slate-200 p-6">
+            <h3 class="text-xl font-bold text-navy">分かりやすい進行</h3>
+            <p class="mt-3 leading-7 text-slate-600">制作内容や料金、今後の流れを事前に共有し、確認しながら制作を進めます。</p>
+          </article>
+          <article class="rounded-lg border border-slate-200 p-6">
+            <h3 class="text-xl font-bold text-navy">公開後も相談可能</h3>
+            <p class="mt-3 leading-7 text-slate-600">納品時の操作説明や、公開後の修正・更新についても内容に応じて対応します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="bg-mist px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Flow</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">制作の流れ</h2>
+        </div>
+        <ol class="mt-10 grid gap-5">
+          <li class="grid gap-4 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200 md:grid-cols-[6rem_1fr]">
+            <span class="text-2xl font-bold text-navy">01</span>
+            <div><h3 class="text-xl font-bold text-navy">無料相談・ヒアリング</h3><p class="mt-2 leading-7 text-slate-600">作りたいサイトの目的、ご希望、ご予算、必要なページなどを確認します。</p></div>
+          </li>
+          <li class="grid gap-4 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200 md:grid-cols-[6rem_1fr]">
+            <span class="text-2xl font-bold text-navy">02</span>
+            <div><h3 class="text-xl font-bold text-navy">内容とお見積りのご提案</h3><p class="mt-2 leading-7 text-slate-600">ヒアリング内容をもとに、制作内容、料金、スケジュールをご提案します。</p></div>
+          </li>
+          <li class="grid gap-4 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200 md:grid-cols-[6rem_1fr]">
+            <span class="text-2xl font-bold text-navy">03</span>
+            <div><h3 class="text-xl font-bold text-navy">構成・デザインの確認</h3><p class="mt-2 leading-7 text-slate-600">サイトの構成やデザインを確認していただき、方向性をすり合わせます。</p></div>
+          </li>
+          <li class="grid gap-4 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200 md:grid-cols-[6rem_1fr]">
+            <span class="text-2xl font-bold text-navy">04</span>
+            <div><h3 class="text-xl font-bold text-navy">制作・修正</h3><p class="mt-2 leading-7 text-slate-600">スマートフォン表示も確認しながら制作し、必要な修正を行います。</p></div>
+          </li>
+          <li class="grid gap-4 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200 md:grid-cols-[6rem_1fr]">
+            <span class="text-2xl font-bold text-navy">05</span>
+            <div><h3 class="text-xl font-bold text-navy">公開・納品</h3><p class="mt-2 leading-7 text-slate-600">サーバーへの公開や納品を行い、必要に応じて更新方法をご説明します。</p></div>
+          </li>
+        </ol>
+        <p class="mt-6 rounded-md bg-white px-4 py-3 text-sm leading-7 text-slate-600 ring-1 ring-slate-200">ドメイン・サーバーは、原則としてお客様名義でのご契約をお願いしています。契約や初期設定はサポートします。</p>
+      </div>
+    </section>
+
+    <section id="price" class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Price</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">料金の目安</h2>
+          <p class="mt-4 leading-8 text-slate-600">内容が固まっていない段階でも大丈夫です。ヒアリング後に、必要な範囲と正式なお見積りをご案内します。</p>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-lg border border-slate-200">
+          <div class="grid gap-0 divide-y divide-slate-200 bg-white md:grid-cols-4 md:divide-x md:divide-y-0">
+            <div class="p-6"><p class="font-bold text-navy">LP・1ページサイト</p><p class="mt-2 text-lg font-bold text-slate-800">30,000円〜</p></div>
+            <div class="p-6"><p class="font-bold text-navy">小規模ホームページ</p><p class="mt-2 text-lg font-bold text-slate-800">50,000円〜</p></div>
+            <div class="p-6"><p class="font-bold text-navy">WordPress対応</p><p class="mt-2 text-base font-bold text-slate-800">内容に応じてお見積り</p></div>
+            <div class="p-6"><p class="font-bold text-navy">既存サイトの修正</p><p class="mt-2 text-base font-bold text-slate-800">内容を確認後お見積り</p></div>
+          </div>
+        </div>
+
+        <ul class="mt-6 grid gap-2 rounded-lg bg-mist p-5 text-sm leading-7 text-slate-600 md:grid-cols-2">
+          <li>・ページ数や機能により料金は変わります</li>
+          <li>・原稿や画像の準備状況により変わります</li>
+          <li>・ドメイン・サーバー費用はお客様負担です</li>
+          <li>・正式な料金はヒアリング後にご案内します</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="bg-mist px-5 py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">About</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">制作者について</h2>
+          <div class="mt-8 flex items-center gap-4 rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-navy text-xl font-bold text-white" aria-hidden="true">MK</div>
+            <div>
+              <p class="text-xl font-bold text-navy">溝渕 弘一</p>
+              <p class="mt-1 text-sm font-semibold text-slate-500">MK Web Create</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-navy bg-white p-6 shadow-sm md:p-8">
+          <div class="space-y-5 text-lg leading-9 text-slate-700">
+            <p>愛媛県松山市を拠点に、個人店や中小企業向けのWebサイト制作を行っています。本業では電気設計に携わっており、設計業務で培った情報整理力や課題解決力を活かして、分かりやすく使いやすいWebサイトを制作します。</p>
+            <p>お客様の目的や伝えたい魅力を丁寧に確認し、相談しながら一つひとつ制作を進めることを大切にしています。</p>
+          </div>
+          <p class="mt-6 rounded-md bg-mist px-4 py-3 text-sm leading-7 text-slate-600">平日夜・土日を中心に対応しています。オンラインで全国からご相談いただけます。</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-md border border-slate-200 p-5"><p class="font-bold text-navy">情報整理</p><p class="mt-2 text-sm leading-6 text-slate-600">情報を整理し、分かりやすい構成を考えます。</p></div>
+            <div class="rounded-md border border-slate-200 p-5"><p class="font-bold text-navy">進捗共有</p><p class="mt-2 text-sm leading-6 text-slate-600">丁寧なヒアリングと進捗共有を大切にします。</p></div>
+            <div class="rounded-md border border-slate-200 p-5"><p class="font-bold text-navy">スマホ重視</p><p class="mt-2 text-sm leading-6 text-slate-600">スマートフォンでの見やすさを重視します。</p></div>
+            <div class="rounded-md border border-slate-200 p-5"><p class="font-bold text-navy">導線提案</p><p class="mt-2 text-sm leading-6 text-slate-600">LINE・Instagramなどを含めた導線をご提案します。</p></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="skills" class="px-5 py-20">
       <div class="mx-auto max-w-7xl">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Skills</p>
-        <h2 class="mt-3 text-3xl font-bold text-navy">使用技術</h2>
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Skills</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">使用技術</h2>
+          <p class="mt-4 leading-8 text-slate-600">お知らせやメニューなど、お客様自身で更新したい箇所をWordPressで構築します。</p>
+        </div>
         <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-md border border-slate-200 p-6">
-            <p class="text-lg font-bold text-navy">HTML</p>
-            <p class="mt-2 text-sm leading-6 text-slate-600">情報構造を意識したマークアップ</p>
-          </div>
-          <div class="rounded-md border border-slate-200 p-6">
-            <p class="text-lg font-bold text-navy">CSS</p>
-            <p class="mt-2 text-sm leading-6 text-slate-600">読みやすく整ったスタイリング</p>
-          </div>
-          <div class="rounded-md border border-slate-200 p-6">
-            <p class="text-lg font-bold text-navy">Tailwind CSS</p>
-            <p class="mt-2 text-sm leading-6 text-slate-600">効率的なレスポンシブ実装</p>
-          </div>
-          <div class="rounded-md border border-slate-200 p-6">
-            <p class="text-lg font-bold text-navy">VS Code</p>
-            <p class="mt-2 text-sm leading-6 text-slate-600">制作環境として使用</p>
-          </div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">HTML / CSS</p><p class="mt-2 text-sm leading-6 text-slate-600">構造と読みやすさを意識した実装</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">Tailwind CSS</p><p class="mt-2 text-sm leading-6 text-slate-600">効率的なレスポンシブ対応</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">WordPress</p><p class="mt-2 text-sm leading-6 text-slate-600">更新したい箇所を管理しやすく設計</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">レスポンシブ対応</p><p class="mt-2 text-sm leading-6 text-slate-600">スマートフォンでの見やすさを調整</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">Git / GitHub</p><p class="mt-2 text-sm leading-6 text-slate-600">公開や管理を見据えた制作</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">LINE導線</p><p class="mt-2 text-sm leading-6 text-slate-600">相談・予約につながるリンク設計</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">Instagram・Googleマップ</p><p class="mt-2 text-sm leading-6 text-slate-600">SNSや地図への導線設置</p></div>
+          <div class="rounded-md border border-slate-200 p-6"><p class="text-lg font-bold text-navy">基本的なSEO設定</p><p class="mt-2 text-sm leading-6 text-slate-600">title・descriptionなどの基本設定</p></div>
         </div>
       </div>
     </section>
 
-   <section id="contact" class="bg-navy px-5 py-20 text-white">
-  <div class="mx-auto max-w-4xl">
-    <div class="rounded-xl bg-white p-8 text-center text-ink shadow-lg md:p-10">
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">
-        Contact
-      </p>
-
-      <h2 class="mt-3 text-3xl font-bold text-navy">
-        お問い合わせ・ご相談はこちら
-      </h2>
-
-      <p class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-        LP制作やWebサイト制作について、メール・LINE・Instagramからお気軽にご相談ください。
-        目的や掲載内容が固まっていない段階でも大丈夫です。
-      </p>
-
-      <div class="mt-8 grid gap-3 sm:grid-cols-3">
-        <a
-          href="mailto:mizobuchi.web.create@gmail.com"
-          class="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-        >
-          メールで相談
-        </a>
-
-        <a
-          href="https://lin.ee/8hux5u7"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-green-500 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-        >
-          LINEで相談
-        </a>
-
-        <a
-          href="https://www.instagram.com/mk.web.create/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-pink-500 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-        >
-          Instagramを見る
-        </a>
+    <section class="bg-mist px-5 py-20">
+      <div class="mx-auto max-w-4xl">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">FAQ</p>
+        <h2 class="mt-3 text-3xl font-bold text-navy">よくある質問</h2>
+        <div class="mt-10 grid gap-4">
+          <details class="rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <summary class="cursor-pointer font-bold text-navy">掲載する文章や内容が決まっていなくても相談できますか？</summary>
+            <p class="mt-3 leading-7 text-slate-600">はい。ヒアリングをしながら、必要な情報やページ構成を一緒に整理します。</p>
+          </details>
+          <details class="rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <summary class="cursor-pointer font-bold text-navy">スマートフォンにも対応していますか？</summary>
+            <p class="mt-3 leading-7 text-slate-600">はい。パソコンだけでなく、スマートフォンでも見やすいレスポンシブデザインで制作します。</p>
+          </details>
+          <details class="rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <summary class="cursor-pointer font-bold text-navy">ドメインやサーバーの契約が分かりません。</summary>
+            <p class="mt-3 leading-7 text-slate-600">お客様名義での契約をお願いしていますが、契約方法や初期設定はサポートします。</p>
+          </details>
+          <details class="rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <summary class="cursor-pointer font-bold text-navy">自分でお知らせやメニューを更新できますか？</summary>
+            <p class="mt-3 leading-7 text-slate-600">WordPressを使用することで、お知らせやメニューなどの指定箇所を管理画面から更新できるようにできます。</p>
+          </details>
+          <details class="rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <summary class="cursor-pointer font-bold text-navy">公開後の修正も依頼できますか？</summary>
+            <p class="mt-3 leading-7 text-slate-600">はい。修正内容を確認し、必要に応じてお見積りのうえ対応します。</p>
+          </details>
+        </div>
       </div>
+    </section>
 
-      <p class="mt-6 text-sm text-slate-500">
-        mizobuchi.web.create@gmail.com
-      </p>
-    </div>
-  </div>
-</section>
+    <section id="contact" class="bg-navy px-5 py-20 text-white">
+      <div class="mx-auto max-w-5xl">
+        <div class="rounded-lg bg-white p-7 text-ink shadow-lg md:p-10">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Contact</p>
+            <h2 class="mt-3 text-3xl font-bold text-navy">ホームページについて、まずはお気軽にご相談ください</h2>
+            <p class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">作りたい内容や料金がまだ決まっていない段階でも大丈夫です。現在のお悩みやご希望をお聞きし、必要な内容を一緒に整理します。</p>
+          </div>
+
+          <div class="mt-8 grid gap-3 md:grid-cols-[1.3fr_1fr_1fr]">
+            <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[56px] items-center justify-center rounded-md bg-line px-5 py-3 text-sm font-bold text-white transition hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-line">LINEで無料相談</a>
+            <a href="mailto:mizobuchi.web.create@gmail.com" class="inline-flex min-h-[56px] items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-navy transition hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">メールで相談</a>
+            <a href="https://www.instagram.com/mk.web.create/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[56px] items-center justify-center rounded-md bg-pink-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-500">Instagramを見る</a>
+          </div>
+
+          <div class="mt-8 rounded-lg bg-mist p-5">
+            <p class="font-bold text-navy">相談例</p>
+            <ul class="mt-3 grid gap-2 text-sm leading-7 text-slate-600 md:grid-cols-2">
+              <li>・ホームページを作るべきか相談したい</li>
+              <li>・今のInstagramだけで十分か知りたい</li>
+              <li>・お知らせを自分で更新できるようにしたい</li>
+              <li>・料金や制作期間を確認したい</li>
+              <li>・既存サイトの一部を修正したい</li>
+            </ul>
+          </div>
+
+          <p class="mt-6 text-center text-sm text-slate-500">mizobuchi.web.create@gmail.com</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-white px-5 py-6">
-    <p class="text-center text-sm text-slate-500">&copy; 2026 Portfolio. All rights reserved.</p>
+    <p class="text-center text-sm text-slate-500">&copy; 2026 MK Web Create. All rights reserved.</p>
   </footer>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function setMenu(open) {
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      mobileMenu.classList.toggle('hidden', !open);
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      setMenu(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setMenu(false);
+      }
+    });
+  </script>
 </body>
 </html>
