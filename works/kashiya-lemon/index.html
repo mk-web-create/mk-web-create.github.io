@@ -123,6 +123,10 @@
             background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
         }
 
+        .hero-image {
+            object-position: left center;
+        }
+
         @media (max-width: 639px) {
             .hero-section {
                 min-height: calc(100svh - 68px);
@@ -130,7 +134,7 @@
                 padding: 56px 0 32px;
             }
             .hero-image {
-                object-position: 62% center;
+                object-position: 55% center;
             }
             .hero-overlay {
                 background: linear-gradient(to bottom, rgba(44, 22, 14, 0.08), rgba(44, 22, 14, 0.42));
@@ -163,7 +167,7 @@
 <header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 shadow-[0px_10px_30px_rgba(93,64,55,0.08)]">
 <div class="max-w-container-max mx-auto px-gutter py-3 lg:py-4 flex justify-between items-center relative">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">bakery_dining</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">cake</span>
 <div class="font-headline-sm text-xl sm:text-headline-sm font-bold text-on-background">菓子屋レモン</div>
 </div>
 <nav class="hidden lg:flex items-center gap-8">
@@ -197,13 +201,17 @@
 </header>
 <!-- Hero Section -->
 <main id="top">
-<section class="hero-section relative min-h-[819px] flex items-center overflow-hidden">
+<section class="hero-section relative min-h-[819px] flex items-start pt-12 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="いちごを飾った菓子屋レモンのショートケーキ" class="hero-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp3d6Gl6aUZhlsGbhcFx4eTsTnW6gl0494o0aXGPFG7iCoGbS8UNDi5D76ZbClpoRdzP_VKIcIx9r45TVX7g-fZ7rsoTY8Hf3pmn9z0I1gOKniOVtVuuvKX7Iii_lBEdQS_jK9R7pI6pQGnI-YpHK8bDDwyXz7rNZZomkjVdz0q9eteSwrwLJxuCznOo5AurqbtqAXfYy4NTFTu7II3RkHdVi2FEFB0SjjciqE3wvhxbMTSRoaQ9ePTpb6JHVtd0xbRs3dI3YmTvc"/>
+<img
+  alt="いちごを飾った菓子屋レモンのショートケーキ"
+  class="hero-image w-full h-full object-cover"
+  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp3d6Gl6aUZhlsGbhcFx4eTsTnW6gl0494o0aXGPFG7iCoGbS8UNDi5D76ZbClpoRdzP_VKIcIx9r45TVX7g-fZ7rsoTY8Hf3pmn9z0I1gOKniOVtVuuvKX7Iii_lBEdQS_jK9R7pI6pQGnI-YpHK8bDDwyXz7rNZZomkjVdz0q9eteSwrwLJxuCznOo5AurqbtqAXfYy4NTFTu7II3RkHdVi2FEFB0SjjciqE3wvhxbMTSRoaQ9ePTpb6JHVtd0xbRs3dI3YmTvc"/
+  >
 <div class="hero-overlay absolute inset-0"></div>
 </div>
 <div class="max-w-container-max mx-auto px-gutter relative z-10 w-full">
-<div class="hero-copy max-w-xl bg-white/40 backdrop-blur-md p-stack-lg rounded-3xl border border-white/20">
+<div class="hero-copy max-w-lg bg-white/40 backdrop-blur-md p-stack-lg rounded-3xl border border-white/20">
 <h1 class="font-display-lg text-display-lg text-on-background mb-stack-md leading-tight">
                     毎日に、<br/>
                     とっておきの甘さを。
@@ -365,7 +373,7 @@
 <span class="font-accent-script text-accent-script text-primary italic">News</span>
 <h2 class="font-headline-md text-headline-md flex items-center gap-2">
                         お知らせ
-                        <span class="material-symbols-outlined text-secondary-fixed">bakery_dining</span>
+                        <span class="material-symbols-outlined text-secondary-fixed">cake</span>
 </h2>
 </div>
 <div class="space-y-0 divide-y divide-dotted divide-outline-variant">
@@ -442,7 +450,7 @@
 <span class="font-accent-script text-accent-script text-primary italic">Access</span>
 <h2 class="font-headline-md text-headline-md flex items-center gap-2">
                             アクセス
-                            <span class="material-symbols-outlined text-secondary-fixed">bakery_dining</span>
+                            <span class="material-symbols-outlined text-secondary-fixed">cake</span>
 </h2>
 </div>
 <div class="space-y-6">
