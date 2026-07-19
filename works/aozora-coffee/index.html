@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>aozora coffee | 日常に、少しだけ特別な一杯を。</title>
+<meta name="description" content="愛媛県松山市の住宅街にある架空のカフェ「aozora coffee」。スペシャルティコーヒーと自家製焼き菓子、季節限定メニューをご紹介します。"/>
+<meta property="og:title" content="aozora coffee | 日常に、少しだけ特別な一杯を。"/>
+<meta property="og:description" content="スペシャルティコーヒーと自家製焼き菓子を楽しむ、架空のカフェサイトです。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="images/hero-latte-cheesecake.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#fcf9f3"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Noto+Sans+JP:wght@400;500;600&amp;family=Noto+Serif+JP:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom styles to bridge Tailwind and Design System specifics */
+        .font-headline-md { font-family: "Noto Serif JP", "Noto Serif", serif; }
+        .font-display-lg { font-family: "Noto Serif JP", "Noto Serif", serif; }
+        .font-label-caps, .font-price { font-family: "Cormorant Garamond", "Noto Sans JP", serif; letter-spacing: 0.12em; }
+        .font-body-md, body { font-family: "Noto Sans JP", system-ui, sans-serif; }
+        .font-headline-sm { font-family: "Noto Serif JP", serif; font-size: 1rem; line-height: 1.6; font-weight: 600; }
+        .text-body-md { font-size: .875rem; line-height: 1.75; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .bg-ivory { background-color: #F7F4EE; }
+        .text-dark-brown { color: #332A25; }
+        
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 84px; }
+        :where(a, button):focus-visible { outline: 2px solid #83542b; outline-offset: 4px; }
+        .nav-link { border-bottom: 1px solid transparent; }
+        .nav-link[aria-current="page"] { color: #83542b; border-bottom-color: #83542b; }
+        .menu-card { display: flex; flex-direction: column; border-top: 1px solid #d1c4be; padding-top: 1rem; }
+        .menu-card h3 { min-height: 3.2em; }
+        .menu-card p { flex: 1; }
+        @media (hover: hover) and (pointer: fine) { .menu-card:hover img { transform: scale(1.04); } }
+        @media (max-width: 374px) { .recommend-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 1023px) { .hero-image { aspect-ratio: 4 / 3; } }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+        }
+
+        /* Botanical Accent Decoration */
+        .botanical-flourish {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.15;
+            color: #788271;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1d1611",
+                        "secondary": "#83542b",
+                        "tertiary": "#788271", /* Botanical Sage */
+                        "surface": "#fcf9f3", /* Ivory */
+                        "surface-container": "#f0eee8",
+                        "surface-container-low": "#f7f3ec",
+                        "surface-container-high": "#e7e1d8",
+                        "on-surface": "#1c1c18",
+                        "on-surface-variant": "#4e4540",
+                        "outline-variant": "#d1c4be",
+                        "tertiary-container": "#788271", /* Matching Footer specified color */
+                        "tertiary-fixed": "#ffffff",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", /* Editorial style usually has sharp corners */
+                        "lg": "0px",
+                        "xl": "0px",
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "section-gap-desktop": "120px",
+                        "section-gap-mobile": "80px",
+                        "container-max-width": "1100px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Noto Sans JP", "sans-serif"],
+                        "label-caps": ["Cormorant Garamond", "Noto Sans JP", "serif"],
+                        "display-lg": ["Noto Serif JP", "serif"],
+                        "headline-md": ["Noto Serif JP", "serif"],
+                        "price": ["Cormorant Garamond", "Noto Sans JP", "serif"]
+                    },
+                    fontSize: {
+                        "body-md": ["14px", { lineHeight: "1.7", letterSpacing: "0.02em" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.2em" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "0.05em" }],
+                        "display-lg-mobile": ["32px", { lineHeight: "1.3", letterSpacing: "0.05em" }],
+                        "headline-md": ["24px", { lineHeight: "1.5", letterSpacing: "0.1em" }],
+                        "headline-sm": ["16px", { lineHeight: "1.6", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center px-4 sm:px-gutter py-3 max-w-container-max-width mx-auto gap-4">
+<a class="flex items-center gap-2 sm:gap-3 min-w-0 shrink" href="#home" aria-label="aozora coffee ホーム">
+<img alt="aozora coffee logo" class="w-10 h-10 object-contain" src="images/logo.webp"/>
+<span class="font-display-lg text-lg sm:text-headline-md tracking-wider sm:tracking-widest text-primary whitespace-nowrap">aozora coffee</span>
+</a>
+<!-- Mobile Navigation Toggle -->
+<div class="flex lg:hidden items-center gap-4 shrink-0">
+<a class="demo-external-link text-primary hover:opacity-80 transition-opacity" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagramについてのデモ案内を表示" data-service="Instagram">
+<span class="material-symbols-outlined text-2xl" aria-hidden="true">photo_camera</span>
+</a>
+<button class="text-primary p-1" id="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="side-drawer" aria-expanded="false">
+<span class="material-symbols-outlined text-3xl" aria-hidden="true">menu</span>
+</button>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden lg:flex gap-5 xl:gap-7 items-center ml-auto" aria-label="メインナビゲーション">
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#home">HOME</a>
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#about">ABOUT</a>
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#menu">MENU</a>
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#seasonal">SEASONAL</a>
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#gallery">GALLERY</a>
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#news">NEWS</a>
+<a class="nav-link text-on-surface-variant font-label-caps hover:text-primary transition-colors" href="#access">ACCESS</a>
+<a class="demo-external-link text-primary hover:opacity-80" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagramについてのデモ案内を表示" data-service="Instagram"><span class="material-symbols-outlined text-xl" aria-hidden="true">photo_camera</span></a>
+</nav>
+</div>
+</header>
+<!-- NavigationDrawer (Mobile) -->
+<div class="fixed inset-y-0 right-0 z-[60] flex flex-col w-[min(20rem,86vw)] bg-surface-container translate-x-full transition-transform duration-300 shadow-xl lg:hidden" id="side-drawer" role="dialog" aria-modal="true" aria-label="モバイルメニュー" aria-hidden="true">
+<div class="p-8 flex justify-between items-center">
+<span class="font-display-lg text-headline-md text-primary">aozora coffee</span>
+<button class="text-primary p-1" id="drawer-close" type="button" aria-label="メニューを閉じる">
+<span class="material-symbols-outlined text-3xl" aria-hidden="true">close</span>
+</button>
+</div>
+<nav class="flex flex-col mt-8">
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#home">HOME</a>
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#about">ABOUT</a>
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#menu">MENU</a>
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#seasonal">SEASONAL</a>
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#gallery">GALLERY</a>
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#news">NEWS</a>
+<a class="drawer-link px-8 py-4 font-label-caps text-on-surface-variant hover:bg-surface-container-high transition-all" href="#access">ACCESS</a>
+</nav>
+</div>
+<div class="fixed inset-0 bg-black/40 z-[55] hidden opacity-0 transition-opacity lg:hidden" id="drawer-overlay" aria-hidden="true"></div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative flex items-center max-w-container-max-width mx-auto px-gutter py-10 md:py-16 lg:min-h-[90vh]" id="home">
+<div class="grid lg:grid-cols-2 items-center gap-12 flex-1 min-w-0">
+<div class="z-10 order-1">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight">
+                        日常に、<br/>
+                        少しだけ特別な<br/>
+                        一杯を。
+                    </h1>
+<p class="font-body-md text-on-surface-variant mb-8 md:mb-12 max-w-lg leading-loose">
+                        愛媛の住宅街にある小さなカフェ。<br/>
+                        こだわりのコーヒーと、自家製の焼き菓子をご用意しています。
+                        木漏れ日が差し込む穏やかな時間をお楽しみください。
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-secondary text-white px-8 py-4 font-label-caps text-center transition-all hover:opacity-80" href="#menu">
+                            メニューを見る
+                        </a>
+<a class="border border-primary text-primary px-8 py-4 font-label-caps text-center transition-all hover:bg-primary/5" href="#access">
+                            店舗情報を見る
+                        </a>
+</div>
+</div>
+<div class="relative order-2">
+<div class="hero-image aspect-[4/5] overflow-hidden">
+<img alt="ラテと自家製チーズケーキ" class="w-full h-full object-cover" decoding="async" src="images/hero-latte-cheesecake.webp"/>
+</div>
+<!-- Decorative botanical accent -->
+<div class="absolute -bottom-8 -left-8 botanical-flourish">
+<span class="material-symbols-outlined text-6xl">spa</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low relative" id="about">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 aspect-[3/4]">
+<img alt="ハンドドリップでコーヒーを淹れる様子" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/about-pour-over.webp"/>
+</div>
+<div class="md:col-span-7">
+<div class="mb-8">
+<span class="font-label-caps text-secondary block mb-2">ABOUT</span>
+<h2 class="font-headline-md text-headline-md text-primary">お店について</h2>
+</div>
+<div class="space-y-6 text-on-surface-variant font-body-md leading-loose">
+<p>aozora coffee は、2024年に愛媛の住宅街にオープンした小さなカフェです。</p>
+<p>スペシャルティコーヒーを丁寧に淹れ、毎日食べたくなるような、やさしい味の焼き菓子をお届けします。</p>
+<p>木の温もりを感じる落ち着いた空間で、ゆっくりとした時間をお過ごしください。</p>
+</div>
+<div class="mt-12 text-tertiary">
+<span class="material-symbols-outlined text-4xl">eco</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RECOMMEND MENU -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop" id="menu">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="text-center mb-16">
+<span class="font-label-caps text-secondary block mb-2">RECOMMEND MENU</span>
+<h2 class="font-headline-md text-headline-md text-primary">おすすめメニュー</h2>
+</div>
+<div class="recommend-grid grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
+<!-- Item 1 -->
+<article class="menu-card group">
+<div class="aspect-square mb-4 overflow-hidden bg-white">
+<img alt="ハンドドリップコーヒー" class="w-full h-full object-cover transition-transform duration-500" loading="lazy" decoding="async" src="images/menu-hand-drip.webp"/>
+</div>
+<h3 class="font-headline-sm mb-1">ハンドドリップコーヒー</h3>
+<p class="text-body-md text-on-surface-variant mb-2 line-clamp-2">季節の豆を使用した、すっきりとした味わい。</p>
+<span class="font-price text-primary text-lg font-semibold">¥550</span>
+</article>
+<!-- Item 2 -->
+<article class="menu-card group">
+<div class="aspect-square mb-4 overflow-hidden bg-white">
+<img alt="カフェラテ" class="w-full h-full object-cover transition-transform duration-500" loading="lazy" decoding="async" src="images/menu-cafe-latte.webp"/>
+</div>
+<h3 class="font-headline-sm mb-1">カフェラテ</h3>
+<p class="text-body-md text-on-surface-variant mb-2 line-clamp-2">ミルクの甘みとエスプレッソのバランスが人気の定番。</p>
+<span class="font-price text-primary text-lg font-semibold">¥600</span>
+</article>
+<!-- Item 3 -->
+<article class="menu-card group">
+<div class="aspect-square mb-4 overflow-hidden bg-white">
+<img alt="自家製チーズケーキ" class="w-full h-full object-cover transition-transform duration-500" loading="lazy" decoding="async" src="images/menu-cheesecake.webp"/>
+</div>
+<h3 class="font-headline-sm mb-1">自家製チーズケーキ</h3>
+<p class="text-body-md text-on-surface-variant mb-2 line-clamp-2">クリームチーズのコクとさっぱりとした後味。</p>
+<span class="font-price text-primary text-lg font-semibold">¥580</span>
+</article>
+<!-- Item 4 -->
+<article class="menu-card group">
+<div class="aspect-square mb-4 overflow-hidden bg-white">
+<img alt="チョコチップスコーン" class="w-full h-full object-cover transition-transform duration-500" loading="lazy" decoding="async" src="images/menu-chocolate-scone.webp"/>
+</div>
+<h3 class="font-headline-sm mb-1">チョコチップスコーン</h3>
+<p class="text-body-md text-on-surface-variant mb-2 line-clamp-2">外はさっくり、中はしっとり、バターの香りが広がります。</p>
+<span class="font-price text-primary text-lg font-semibold">¥380</span>
+</article>
+</div>
+</div>
+</section>
+<!-- SEASONAL MENU -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container" id="seasonal">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="text-center mb-16">
+<span class="font-label-caps text-secondary block mb-2">SEASONAL MENU</span>
+<h2 class="font-headline-md text-headline-md text-primary">季節限定メニュー</h2>
+</div>
+<!-- Main Featured Seasonal -->
+<div class="bg-white border border-outline-variant p-6 md:p-12 mb-12">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="aspect-video overflow-hidden">
+<img alt="いちごとピスタチオのタルト" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/seasonal-strawberry-tart.webp"/>
+</div>
+<div>
+<h3 class="font-headline-md text-primary mb-4">いちごとピスタチオのタルト</h3>
+<p class="text-body-md text-on-surface-variant mb-6 leading-loose">
+                                旬のいちごをたっぷり使ったタルト。ピスタチオクリームと相性の良い、季節限定の一品です。上品な甘みとナッツの香ばしさをお楽しみください。
+                            </p>
+<span class="font-price text-secondary text-2xl">¥650</span>
+</div>
+</div>
+</div>
+<!-- Other Seasonals -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+<div class="flex gap-5 items-start border-t border-outline-variant pt-5">
+<img alt="さくらラテ" class="w-28 h-28 md:w-24 md:h-24 object-cover shrink-0" loading="lazy" decoding="async" src="images/seasonal-sakura-latte.webp"/>
+<div>
+<h3 class="font-headline-sm">さくらラテ</h3>
+<p class="text-xs text-on-surface-variant mb-1">やさしい桜の香りを楽しめる限定ラテ。</p>
+<span class="font-price text-sm">¥600</span>
+</div>
+</div>
+<div class="flex gap-5 items-start border-t border-outline-variant pt-5">
+<img alt="レモンのパウンドケーキ" class="w-24 h-24 object-cover" loading="lazy" decoding="async" src="images/seasonal-lemon-pound-cake.webp"/>
+<div>
+<h3 class="font-headline-sm">レモンのパウンドケーキ</h3>
+<p class="text-xs text-on-surface-variant mb-1">瀬戸内レモンの爽やかな香り。しっとり食感。</p>
+<span class="font-price text-sm">¥480</span>
+</div>
+</div>
+<div class="flex gap-5 items-start border-t border-outline-variant pt-5">
+<img alt="抹茶とホワイトチョコのクッキー" class="w-24 h-24 object-cover" loading="lazy" decoding="async" src="images/seasonal-matcha-cookie.webp"/>
+<div>
+<h3 class="font-headline-sm">抹茶とホワイトチョコのクッキー</h3>
+<p class="text-xs text-on-surface-variant mb-1">抹茶のほろ苦さとホワイトチョコの甘さが癖になる。</p>
+<span class="font-price text-sm">¥320</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- GALLERY -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop" id="gallery">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="text-center mb-16">
+<span class="font-label-caps text-secondary block mb-2">GALLERY</span>
+<h2 class="font-headline-md text-headline-md text-primary">店内の雰囲気</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+<div class="col-span-2 md:col-span-8 aspect-[16/10] md:aspect-video overflow-hidden">
+<img alt="木の温もりを感じるカフェ店内" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/gallery-interior.webp"/>
+</div>
+<div class="col-span-1 md:col-span-4 aspect-square overflow-hidden">
+<img alt="カフェのコーヒーカウンター" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/gallery-counter.webp"/>
+</div>
+<div class="col-span-1 md:col-span-4 aspect-square overflow-hidden">
+<img alt="花とアートを飾った店内の棚" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/gallery-shelf.webp"/>
+</div>
+<div class="col-span-1 md:col-span-4 aspect-square overflow-hidden">
+<img alt="窓辺でコーヒーを楽しむ店内" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/gallery-window-seats.webp"/>
+</div>
+<div class="col-span-1 md:col-span-4 aspect-square overflow-hidden">
+<img alt="自然光を浴びる観葉植物" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/gallery-plant.webp"/>
+</div>
+</div>
+</div>
+</section>
+<!-- NEWS Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low" id="news">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<div>
+<div class="mb-12">
+<span class="font-label-caps text-secondary block mb-2">NEWS</span>
+<h2 class="font-headline-md text-headline-md text-primary">お知らせ</h2>
+</div>
+<div class="divide-y divide-outline-variant">
+<article class="py-6 grid grid-cols-[auto_1fr] sm:grid-cols-[100px_auto_1fr] items-center gap-x-4 gap-y-2 group">
+<time class="font-label-caps text-on-surface-variant">2026.07.10</time>
+<span class="text-[10px] border border-outline-variant px-2 py-0.5 font-label-caps h-fit">お知らせ</span>
+<p class="font-body-md text-primary col-span-2 sm:col-span-1">8月の営業カレンダーを掲載しました</p>
+</article>
+<article class="py-6 grid grid-cols-[auto_1fr] sm:grid-cols-[100px_auto_1fr] items-center gap-x-4 gap-y-2 group">
+<time class="font-label-caps text-on-surface-variant">2026.07.01</time>
+<span class="text-[10px] border border-secondary text-secondary px-2 py-0.5 font-label-caps h-fit">新商品</span>
+<p class="font-body-md text-primary col-span-2 sm:col-span-1">「抹茶とホワイトチョコのクッキー」が新登場</p>
+</article>
+<article class="py-6 grid grid-cols-[auto_1fr] sm:grid-cols-[100px_auto_1fr] items-center gap-x-4 gap-y-2 group">
+<time class="font-label-caps text-on-surface-variant">2026.06.20</time>
+<span class="text-[10px] border border-outline-variant px-2 py-0.5 font-label-caps h-fit">お知らせ</span>
+<p class="font-body-md text-primary col-span-2 sm:col-span-1">7月15日は臨時休業となります</p>
+</article>
+</div>
+<div class="mt-12">
+<span class="inline-block border border-outline-variant px-10 py-3 font-label-caps text-on-surface-variant" aria-disabled="true">お知らせ一覧へ（準備中）</span>
+</div>
+</div>
+<div class="relative aspect-[4/3] lg:aspect-square">
+<img alt="カフェの自家製焼き菓子" class="w-full h-full object-cover" loading="lazy" decoding="async" src="images/news-baked-sweets.webp"/>
+<div class="absolute -top-4 -right-4 botanical-flourish">
+<span class="material-symbols-outlined text-5xl">forest</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ACCESS Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop" id="access">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="text-center mb-16">
+<span class="font-label-caps text-secondary block mb-2">ACCESS</span>
+<h2 class="font-headline-md text-headline-md text-primary">店舗情報</h2>
+</div>
+<div class="grid lg:grid-cols-3 gap-12 items-start">
+<div class="space-y-6">
+<div class="flex justify-between border-b border-outline-variant py-3">
+<span class="font-label-caps text-xs text-on-surface-variant">営業時間</span>
+<span class="text-body-md text-right">10:00〜18:00<br class="sm:hidden"/>（L.O.17:30）</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant py-3">
+<span class="font-label-caps text-xs text-on-surface-variant">定休日</span>
+<span class="text-body-md">火曜日・第2水曜日</span>
+</div>
+<div class="flex flex-col gap-2 border-b border-outline-variant py-3">
+<span class="font-label-caps text-xs text-on-surface-variant">住所</span>
+<span class="text-body-md">〒790-0000<br/>愛媛県松山市○○町1-2-3</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant py-3">
+<span class="font-label-caps text-xs text-on-surface-variant">電話番号</span>
+<a class="text-body-md underline underline-offset-4" href="tel:0890000000">089-000-0000</a>
+</div>
+<div class="flex justify-between border-b border-outline-variant py-3">
+<span class="font-label-caps text-xs text-on-surface-variant">駐車場</span>
+<span class="text-body-md">店舗前に2台分あり</span>
+</div>
+<div class="flex flex-col gap-2 border-b border-outline-variant py-3">
+<span class="font-label-caps text-xs text-on-surface-variant">支払い方法</span>
+<span class="text-body-md">現金／クレジットカード／QR決済</span>
+</div>
+</div>
+<div class="lg:col-span-2 space-y-6">
+<div class="aspect-video w-full bg-surface-container border border-outline-variant">
+<div class="w-full h-full flex items-center justify-center relative">
+<div class="absolute inset-0 grayscale contrast-75 brightness-110">
+<div class="w-full h-full bg-cover bg-center opacity-30" data-location="Matsuyama City, Ehime, Japan" style="background-image: url('images/access-map.webp')"></div>
+</div>
+<div class="z-10 text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-2">location_on</span>
+<p class="font-label-caps text-primary">aozora coffee</p>
+</div>
+</div>
+</div>
+<button class="demo-external-link block w-full text-center border border-outline-variant py-4 font-label-caps text-primary hover:bg-surface-container transition-colors" type="button" data-service="Google Map">Google Mapで見る</button>
+</div>
+</div>
+<!-- Instagram CTA -->
+<div class="mt-24 bg-surface-container-low p-12 text-center relative overflow-hidden">
+<div class="relative z-10 flex flex-col items-center">
+<div class="mb-6 p-4 border border-outline-variant inline-block">
+<span class="material-symbols-outlined text-secondary text-4xl">local_cafe</span>
+</div>
+<p class="font-body-md mb-8">最新情報や日々の様子を<br/>Instagramで発信中です。</p>
+<a class="demo-external-link bg-secondary text-white px-10 py-4 font-label-caps hover:opacity-90 transition-all" href="https://instagram.com" target="_blank" rel="noopener noreferrer" data-service="Instagram">Instagramを見る</a>
+</div>
+<div class="absolute bottom-0 right-0 botanical-flourish">
+<span class="material-symbols-outlined text-9xl">spa</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary-container py-16 px-gutter text-tertiary-fixed">
+<div class="max-w-container-max-width mx-auto flex flex-col items-center gap-12">
+<div class="flex flex-col items-center gap-4">
+<img alt="aozora coffee logo" class="w-16 h-16 invert opacity-80" src="images/logo.webp"/>
+<span class="font-display-lg text-headline-sm tracking-widest text-white">aozora coffee</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#home">HOME</a>
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#about">ABOUT</a>
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#menu">MENU</a>
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#seasonal">SEASONAL</a>
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#gallery">GALLERY</a>
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#news">NEWS</a>
+<a class="font-label-caps text-xs text-white/70 hover:text-white transition-colors" href="#access">ACCESS</a>
+</nav>
+<div class="flex gap-6">
+<a class="demo-external-link text-white/70 hover:text-white transition-all" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagramについてのデモ案内を表示" data-service="Instagram"><span class="material-symbols-outlined text-2xl" aria-hidden="true">photo_camera</span></a>
+<span class="text-white/50" aria-label="メールリンク準備中"><span class="material-symbols-outlined text-2xl" aria-hidden="true">mail</span></span>
+</div>
+<p class="font-label-caps text-[10px] text-white/40 tracking-widest">© aozora coffee</p>
+</div>
+</footer>
+<!-- Demo external-link notice -->
+<div class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/50 px-6" id="demo-link-modal" role="dialog" aria-modal="true" aria-labelledby="demo-link-title" aria-describedby="demo-link-description">
+<div class="w-full max-w-md border border-outline-variant bg-surface p-7 sm:p-9 text-center shadow-xl">
+<span class="material-symbols-outlined mb-4 text-4xl text-secondary" aria-hidden="true">open_in_new</span>
+<h2 class="font-headline-md text-xl text-primary" id="demo-link-title">デモサイトのご案内</h2>
+<p class="mt-4 text-body-md leading-loose text-on-surface-variant" id="demo-link-description">このページはポートフォリオ用のデモサイトです。<br/>実際のサイトでは、外部ページへ移動します。</p>
+<button class="mt-7 min-h-12 w-full bg-secondary px-8 py-3 font-label-caps text-white hover:opacity-90" id="demo-link-close" type="button">閉じる</button>
+</div>
+</div>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sideDrawer = document.getElementById('side-drawer');
+        const drawerClose = document.getElementById('drawer-close');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerLinks = document.querySelectorAll('.drawer-link');
+        const demoLinkModal = document.getElementById('demo-link-modal');
+        const demoLinkClose = document.getElementById('demo-link-close');
+        const demoLinkDescription = document.getElementById('demo-link-description');
+        const demoExternalLinks = document.querySelectorAll('.demo-external-link');
+        let demoLinkTrigger = null;
+
+        function closeDemoLinkModal() {
+            if (!demoLinkModal) return;
+            demoLinkModal.classList.add('hidden');
+            demoLinkModal.classList.remove('flex');
+            document.body.style.overflow = '';
+            demoLinkTrigger?.focus();
+        }
+
+        demoExternalLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                if (!demoLinkModal) return;
+                demoLinkTrigger = event.currentTarget;
+                const service = event.currentTarget.dataset.service || '外部ページ';
+                if (demoLinkDescription) {
+                    demoLinkDescription.innerHTML = `このページはポートフォリオ用のデモサイトです。<br>実際のサイトでは、${service}へ移動します。`;
+                }
+                demoLinkModal.classList.remove('hidden');
+                demoLinkModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                demoLinkClose?.focus();
+            });
+        });
+        demoLinkClose?.addEventListener('click', closeDemoLinkModal);
+        demoLinkModal?.addEventListener('click', event => {
+            if (event.target === demoLinkModal) closeDemoLinkModal();
+        });
+
+        let lastFocusedElement = null;
+        function toggleDrawer(isOpen) {
+            if (!menuToggle || !sideDrawer || !drawerOverlay) return;
+            if (isOpen) {
+                lastFocusedElement = document.activeElement;
+                sideDrawer.classList.remove('translate-x-full');
+                drawerOverlay.classList.remove('hidden');
+                requestAnimationFrame(() => drawerOverlay.classList.add('opacity-100'));
+                document.body.style.overflow = 'hidden';
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'メニューを閉じる');
+                sideDrawer.setAttribute('aria-hidden', 'false');
+                drawerClose?.focus();
+            } else {
+                sideDrawer.classList.add('translate-x-full');
+                drawerOverlay.classList.remove('opacity-100');
+                setTimeout(() => drawerOverlay.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'メニューを開く');
+                sideDrawer.setAttribute('aria-hidden', 'true');
+                lastFocusedElement?.focus();
+            }
+        }
+
+        menuToggle?.addEventListener('click', () => toggleDrawer(menuToggle.getAttribute('aria-expanded') !== 'true'));
+        drawerClose?.addEventListener('click', () => toggleDrawer(false));
+        drawerOverlay?.addEventListener('click', () => toggleDrawer(false));
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', () => toggleDrawer(false));
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeDemoLinkModal();
+                toggleDrawer(false);
+            }
+        });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 1024) toggleDrawer(false); });
+
+        const sections = [...document.querySelectorAll('main section[id]')];
+        const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
+        const setActiveLink = id => navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
+        });
+        if ('IntersectionObserver' in window) {
+            const visible = new Map();
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => visible.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0));
+                const active = [...visible.entries()].sort((a, b) => b[1] - a[1])[0];
+                if (active && active[1] > 0) setActiveLink(active[0]);
+                if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) setActiveLink('access');
+            }, { rootMargin: '-20% 0px -55% 0px', threshold: [0, .25, .5, .75] });
+            sections.forEach(section => observer.observe(section));
+        } else if (sections[0]) setActiveLink(sections[0].id);
+    </script>
+</body></html>
+
