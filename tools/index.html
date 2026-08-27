@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>業務改善ツール販売｜MK Web Create</title>
+  <meta name="description" content="中小企業・個人事業主向けに、Web・Excel・資料作成などを使って日々のちょっと面倒な作業を少し楽にする業務改善ツールをご案内しています。">
+  <meta property="og:title" content="業務改善ツール販売｜MK Web Create">
+  <meta property="og:description" content="毎日のちょっと面倒な作業を、少し楽に。中小企業・個人事業主向けのシンプルな業務改善ツールです。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mk-web-create.github.io/tools/">
+  <meta property="og:image" content="https://mk-web-create.github.io/assets/images/og/mk-web-create-og.png">
+  <meta property="og:site_name" content="MK Web Create">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="業務改善ツール販売｜MK Web Create">
+  <meta name="twitter:description" content="毎日のちょっと面倒な作業を、少し楽に。中小企業・個人事業主向けのシンプルな業務改善ツールです。">
+  <meta name="twitter:image" content="https://mk-web-create.github.io/assets/images/og/mk-web-create-og.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0f2747',
+            ink: '#1f2a37',
+            mist: '#f5f8fb',
+            line: '#06c755'
+          },
+          fontFamily: {
+            sans: ['Noto Sans JP', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { overflow-x: hidden; }
+    section[id] { scroll-margin-top: 92px; }
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 100;
+      border-radius: .375rem;
+      background: #0f2747;
+      color: #fff;
+      padding: .75rem 1rem;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (min-width: 1024px) { html { font-size: 17px; } }
+  </style>
+</head>
+<body id="top" class="bg-white text-ink antialiased">
+  <a href="#main" class="skip-link">本文へ移動</a>
+
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3">
+      <a href="../index.html" class="flex min-w-0 flex-col leading-tight text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="MK Web Create トップへ">
+        <span class="text-base font-bold tracking-wide sm:text-lg">MK Web Create</span>
+        <span class="mt-1 text-[11px] font-semibold text-slate-500 sm:text-xs">事業の小さな困りごとを仕組みで改善</span>
+      </a>
+
+      <nav class="hidden items-center gap-4 text-[13px] font-semibold text-slate-600 xl:flex" aria-label="主要メニュー">
+        <a href="../index.html#services" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">できること</a>
+        <a href="../index.html#works" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作・改善事例</a>
+        <a href="./index.html" aria-current="page" class="rounded-md bg-mist px-3 py-2 text-navy ring-1 ring-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">ツール販売</a>
+        <a href="../index.html#reasons" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">大切にすること</a>
+        <a href="../index.html#flow" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">進め方</a>
+        <a href="../index.html#about" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">プロフィール</a>
+        <a href="../index.html#contact" class="rounded-md bg-navy px-4 py-2.5 text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">お問い合わせ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="hidden rounded-md bg-line px-4 py-2.5 text-sm font-bold text-white transition hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-line sm:inline-flex xl:hidden">LINEで相談する</a>
+        <button id="menu-button" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-300 bg-white text-navy transition hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy xl:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">
+          <span class="sr-only">メニュー</span>
+          <span aria-hidden="true" class="flex flex-col gap-1.5">
+            <span class="block h-0.5 w-5 bg-navy"></span>
+            <span class="block h-0.5 w-5 bg-navy"></span>
+            <span class="block h-0.5 w-5 bg-navy"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white xl:hidden">
+      <nav class="mx-auto grid max-w-7xl gap-1 px-5 py-4 text-sm font-semibold text-slate-700" aria-label="スマートフォンメニュー">
+        <a href="../index.html#services" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">できること</a>
+        <a href="../index.html#works" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">制作・改善事例</a>
+        <a href="./index.html" aria-current="page" class="rounded-md bg-mist px-3 py-3 text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">ツール販売</a>
+        <a href="../index.html#reasons" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">大切にすること</a>
+        <a href="../index.html#flow" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">進め方</a>
+        <a href="../index.html#about" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">プロフィール</a>
+        <a href="../index.html#contact" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">お問い合わせ</a>
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-md bg-line px-4 py-3 text-center font-bold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-line">LINEで相談する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="bg-mist px-5 py-14 md:py-20">
+      <div class="mx-auto max-w-7xl">
+        <p class="inline-flex rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-bold text-navy">中小企業・個人事業主向け</p>
+        <h1 class="mt-5 max-w-4xl text-3xl font-bold leading-tight text-navy sm:text-5xl">毎日のちょっと面倒な作業を、<br class="hidden sm:block">少し楽に。</h1>
+        <p class="mt-6 max-w-3xl leading-8 text-slate-600">Web・Excel・資料作成などを使い、日々の繰り返し作業を小さく改善するツールをご案内しています。大がかりなシステムでなく、今の仕事に取り入れやすい分かりやすさを大切にしています。</p>
+        <p class="mt-5 text-sm leading-7 text-slate-500">商品の説明はこのサイトでご確認いただき、決済はSTORESの商品ページで行う予定です。</p>
+      </div>
+    </section>
+
+    <section id="products" class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Business Tools</p>
+            <h2 class="mt-3 text-3xl font-bold text-navy">業務改善ツール販売</h2>
+          </div>
+          <p class="max-w-xl leading-7 text-slate-600">できることと注意点を確認してから、ご自身の作業に合うものをお選びください。</p>
+        </div>
+
+        <div id="product-grid" class="grid gap-7 md:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+        <noscript>
+          <p class="rounded-lg border border-amber-300 bg-amber-50 p-5 text-amber-900">商品一覧の表示にはJavaScriptが必要です。</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="bg-mist px-5 py-16">
+      <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">
+        <div class="rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Small Improvement</p>
+          <h2 class="mt-3 text-2xl font-bold text-navy">今の作業に合う、小さな改善から</h2>
+          <p class="mt-4 leading-8 text-slate-600">便利そうな機能を増やすことより、実際に使う人の負担が減ることを大切にしています。各商品ページでは、できることだけでなく利用環境や注意点もご案内します。</p>
+        </div>
+        <div class="rounded-lg bg-navy p-6 text-white shadow-sm sm:p-8">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-300">Need Help?</p>
+          <h2 class="mt-3 text-2xl font-bold">どの方法が合うか分からないときは</h2>
+          <p class="mt-4 leading-8 text-slate-200">販売中のツールで足りるか、別の小さな改善がよいかも含めてご相談いただけます。</p>
+          <a href="../index.html#contact" class="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-bold text-navy transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">相談方法を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white px-5 py-10">
+    <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_1fr_1fr]">
+      <div>
+        <p class="font-bold text-navy">MK Web Create</p>
+        <p class="mt-2 text-sm leading-6 text-slate-500">Web・AI・Excel・資料・簡易ツールを使った小さな業務改善とWeb制作</p>
+      </div>
+      <nav class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-slate-600" aria-label="フッターメニュー">
+        <a href="../index.html#services" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">できること</a>
+        <a href="../index.html#works" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作・改善事例</a>
+        <a href="./index.html" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">ツール販売</a>
+        <a href="../index.html#about" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">プロフィール</a>
+        <a href="../index.html#contact" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">お問い合わせ</a>
+        <a href="../privacy-policy.html" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">プライバシーポリシー</a>
+      </nav>
+      <div class="grid content-start gap-3 text-sm font-semibold text-slate-600">
+        <a href="https://www.instagram.com/mk.web.create/" target="_blank" rel="noopener noreferrer" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">Instagram</a>
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">公式LINE</a>
+      </div>
+    </div>
+    <p class="mx-auto mt-8 max-w-7xl border-t border-slate-200 pt-6 text-center text-sm text-slate-500">&copy; 2026 MK Web Create. All rights reserved.</p>
+  </footer>
+
+  <script src="../assets/js/products.js"></script>
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function setMenu(open) {
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      mobileMenu.classList.toggle('hidden', !open);
+    }
+
+    menuButton.addEventListener('click', () => {
+      setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMenu(false);
+    });
+
+    const escapeHtml = (value) => String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+    const formatPrice = (price) => `${new Intl.NumberFormat('ja-JP').format(price)}円`;
+    const productGrid = document.getElementById('product-grid');
+    const products = Array.isArray(window.MK_PRODUCTS) ? window.MK_PRODUCTS : [];
+
+    if (products.length === 0) {
+      productGrid.innerHTML = '<p class="rounded-lg bg-mist p-5 text-slate-600">現在ご案内できる商品を準備しています。</p>';
+    } else {
+      productGrid.innerHTML = products.map((product) => `
+        <article class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-slate-200">
+          <div class="aspect-video overflow-hidden bg-slate-100 p-3">
+            <img class="h-full w-full rounded object-contain" src="${escapeHtml(product.image)}" width="1600" height="900" loading="lazy" alt="${escapeHtml(product.imageAlt)}">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <p class="text-xs font-bold text-slate-500">${escapeHtml(product.category)}</p>
+            <h3 class="mt-3 text-2xl font-bold leading-snug text-navy">${escapeHtml(product.name)}</h3>
+            <p class="mt-4 leading-7 text-slate-600">${escapeHtml(product.shortDescription)}</p>
+            <div class="mt-5 rounded-md bg-mist p-4">
+              <p class="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">解決できる悩み</p>
+              <p class="mt-2 text-sm leading-6 text-slate-700">${escapeHtml(product.problemSummary)}</p>
+            </div>
+            <div class="mt-auto pt-6">
+              <p class="text-sm font-semibold text-slate-500">販売価格</p>
+              <p class="mt-1 text-3xl font-bold text-navy">${formatPrice(product.price)}<span class="ml-1 text-sm font-normal text-slate-500">（税込）</span></p>
+              <a href="${escapeHtml(product.detailUrl)}" class="mt-5 inline-flex min-h-[50px] w-full items-center justify-center rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">詳しく見る</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

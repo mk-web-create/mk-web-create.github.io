@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品詳細｜業務改善ツール｜MK Web Create</title>
+  <meta name="description" content="MK Web Createが販売する業務改善ツールの商品詳細ページです。">
+  <meta property="og:title" content="商品詳細｜業務改善ツール｜MK Web Create">
+  <meta property="og:description" content="毎日のちょっと面倒な作業を、少し楽にする業務改善ツールをご案内します。">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://mk-web-create.github.io/tools/product.html">
+  <meta property="og:image" content="https://mk-web-create.github.io/assets/images/automation-demo/proposal-generator-output.png">
+  <meta property="og:site_name" content="MK Web Create">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="商品詳細｜業務改善ツール｜MK Web Create">
+  <meta name="twitter:description" content="毎日のちょっと面倒な作業を、少し楽にする業務改善ツールをご案内します。">
+  <meta name="twitter:image" content="https://mk-web-create.github.io/assets/images/automation-demo/proposal-generator-output.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0f2747',
+            ink: '#1f2a37',
+            mist: '#f5f8fb',
+            line: '#06c755'
+          },
+          fontFamily: {
+            sans: ['Noto Sans JP', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { overflow-x: hidden; }
+    section[id] { scroll-margin-top: 92px; }
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 100;
+      border-radius: .375rem;
+      background: #0f2747;
+      color: #fff;
+      padding: .75rem 1rem;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (min-width: 1024px) { html { font-size: 17px; } }
+  </style>
+</head>
+<body id="top" class="bg-white text-ink antialiased">
+  <a href="#main" class="skip-link">本文へ移動</a>
+
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3">
+      <a href="../index.html" class="flex min-w-0 flex-col leading-tight text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy" aria-label="MK Web Create トップへ">
+        <span class="text-base font-bold tracking-wide sm:text-lg">MK Web Create</span>
+        <span class="mt-1 text-[11px] font-semibold text-slate-500 sm:text-xs">事業の小さな困りごとを仕組みで改善</span>
+      </a>
+
+      <nav class="hidden items-center gap-4 text-[13px] font-semibold text-slate-600 xl:flex" aria-label="主要メニュー">
+        <a href="../index.html#services" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">できること</a>
+        <a href="../index.html#works" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作・改善事例</a>
+        <a href="./index.html" class="rounded-md bg-mist px-3 py-2 text-navy ring-1 ring-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">ツール販売</a>
+        <a href="../index.html#reasons" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">大切にすること</a>
+        <a href="../index.html#flow" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">進め方</a>
+        <a href="../index.html#about" class="transition hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">プロフィール</a>
+        <a href="../index.html#contact" class="rounded-md bg-navy px-4 py-2.5 text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">お問い合わせ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="hidden rounded-md bg-line px-4 py-2.5 text-sm font-bold text-white transition hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-line sm:inline-flex xl:hidden">LINEで相談する</a>
+        <button id="menu-button" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-300 bg-white text-navy transition hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy xl:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">
+          <span class="sr-only">メニュー</span>
+          <span aria-hidden="true" class="flex flex-col gap-1.5">
+            <span class="block h-0.5 w-5 bg-navy"></span>
+            <span class="block h-0.5 w-5 bg-navy"></span>
+            <span class="block h-0.5 w-5 bg-navy"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white xl:hidden">
+      <nav class="mx-auto grid max-w-7xl gap-1 px-5 py-4 text-sm font-semibold text-slate-700" aria-label="スマートフォンメニュー">
+        <a href="../index.html#services" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">できること</a>
+        <a href="../index.html#works" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">制作・改善事例</a>
+        <a href="./index.html" aria-current="page" class="rounded-md bg-mist px-3 py-3 text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">ツール販売</a>
+        <a href="../index.html#reasons" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">大切にすること</a>
+        <a href="../index.html#flow" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">進め方</a>
+        <a href="../index.html#about" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">プロフィール</a>
+        <a href="../index.html#contact" class="rounded-md px-3 py-3 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">お問い合わせ</a>
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-md bg-line px-4 py-3 text-center font-bold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-line">LINEで相談する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="product-page">
+      <section class="bg-mist px-5 py-12 md:py-16">
+        <div class="mx-auto max-w-7xl">
+          <nav aria-label="パンくずリスト" class="mb-7 flex flex-wrap items-center gap-2 text-sm text-slate-500">
+            <a href="../index.html" class="font-semibold hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">トップ</a>
+            <span aria-hidden="true">/</span>
+            <a href="./index.html" class="font-semibold hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">ツール販売</a>
+            <span aria-hidden="true">/</span>
+            <span id="breadcrumb-name" aria-current="page">商品詳細</span>
+          </nav>
+
+          <div class="grid items-center gap-9 lg:grid-cols-[1fr_0.95fr] lg:gap-12">
+            <div>
+              <p id="product-category" class="inline-flex rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-bold text-navy"></p>
+              <h1 id="product-name" class="mt-5 text-3xl font-bold leading-tight text-navy sm:text-5xl"></h1>
+              <p id="product-tagline" class="mt-5 text-xl font-bold leading-8 text-slate-700"></p>
+              <p id="product-summary" class="mt-5 max-w-2xl leading-8 text-slate-600"></p>
+
+              <div class="mt-7 flex flex-col gap-4 rounded-lg bg-white p-5 shadow-sm ring-1 ring-slate-200 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                <div>
+                  <p class="text-sm font-semibold text-slate-500">販売価格</p>
+                  <p class="mt-1"><span id="hero-price" class="text-3xl font-bold text-navy"></span><span class="ml-1 text-sm text-slate-500">（税込）</span></p>
+                </div>
+                <a id="hero-purchase-link" href="https://example.com/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[52px] items-center justify-center rounded-md bg-navy px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">STORESで購入する<span class="sr-only">（新しいタブで開きます）</span></a>
+              </div>
+              <p id="hero-purchase-note" class="mt-3 hidden text-sm leading-6 text-amber-800"></p>
+            </div>
+
+            <figure class="rounded-xl bg-white p-4 shadow-lg ring-1 ring-slate-200 sm:p-6">
+              <img id="product-image" class="aspect-video w-full rounded-lg bg-slate-100 object-contain" src="" width="1600" height="900" alt="">
+              <figcaption class="mt-3 text-center text-sm leading-6 text-slate-500">実際に自動生成したPowerPointの画面例です。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="problems" class="px-5 py-20">
+        <div class="mx-auto max-w-7xl">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Problems</p>
+            <h2 class="mt-3 text-3xl font-bold text-navy">こんなお悩みありませんか？</h2>
+            <p class="mt-4 leading-8 text-slate-600">商品を選び、情報を確認し、資料へまとめる作業には細かな手間が積み重なります。</p>
+          </div>
+          <div id="pain-list" class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <section id="features" class="bg-mist px-5 py-20">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Features</p>
+              <h2 class="mt-3 text-3xl font-bold text-navy">このツールでできること</h2>
+            </div>
+            <p class="max-w-xl leading-7 text-slate-600">商品ページの情報をそのまま鵜呑みにせず、自動化と人の確認を組み合わせる設計です。</p>
+          </div>
+          <div id="feature-list" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <section id="steps" class="px-5 py-20">
+        <div class="mx-auto max-w-7xl">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">How to Use</p>
+            <h2 class="mt-3 text-3xl font-bold text-navy">使い方</h2>
+            <p class="mt-4 leading-8 text-slate-600">入力するのは商品URL。あとは保存してバッチを実行し、できあがった資料を確認します。</p>
+          </div>
+          <ol id="step-list" class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4"></ol>
+        </div>
+      </section>
+
+      <section id="recommended" class="bg-navy px-5 py-20 text-white">
+        <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-300">Recommended</p>
+            <h2 class="mt-3 text-3xl font-bold">こんな方におすすめ</h2>
+            <p class="mt-5 leading-8 text-slate-200">毎回の転記とレイアウト調整を減らし、内容の確認や提案そのものに時間を使いたい方へ。</p>
+          </div>
+          <ul id="recommended-list" class="grid gap-4 sm:grid-cols-2"></ul>
+        </div>
+      </section>
+
+      <section id="requirements" class="px-5 py-20">
+        <div class="mx-auto max-w-5xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-9">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Before Purchase</p>
+          <h2 class="mt-3 text-3xl font-bold text-navy">ご購入前にご確認ください</h2>
+          <p class="mt-4 leading-8 text-slate-600">実際の業務で無理なく使えるか判断できるよう、利用環境と現在の対応範囲を明記しています。</p>
+          <ul id="note-list" class="mt-7 grid gap-3"></ul>
+        </div>
+      </section>
+
+      <section class="bg-mist px-5 py-20">
+        <div class="mx-auto max-w-5xl rounded-xl bg-white p-6 text-center shadow-lg ring-1 ring-slate-200 sm:p-10">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Purchase</p>
+          <h2 id="purchase-name" class="mt-3 text-2xl font-bold text-navy sm:text-3xl"></h2>
+          <p class="mt-5"><span id="purchase-price" class="text-4xl font-bold text-navy"></span><span class="ml-1 text-sm text-slate-500">（税込）</span></p>
+          <a id="purchase-link" href="https://example.com/" target="_blank" rel="noopener noreferrer" class="mt-7 inline-flex min-h-[54px] w-full max-w-md items-center justify-center rounded-md bg-navy px-7 py-3 text-base font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">STORESで購入する<span class="sr-only">（新しいタブで開きます）</span></a>
+          <p id="purchase-note" class="mx-auto mt-4 hidden max-w-xl text-sm leading-6 text-amber-800"></p>
+          <p class="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-500">決済と商品の受け取りはSTORESの商品ページで行います。このサイト内で決済情報を入力することはありません。</p>
+        </div>
+      </section>
+    </div>
+
+    <section id="product-not-found" class="hidden px-5 py-24">
+      <div class="mx-auto max-w-3xl rounded-lg bg-mist p-8 text-center ring-1 ring-slate-200">
+        <h1 class="text-3xl font-bold text-navy">商品が見つかりませんでした</h1>
+        <p class="mt-4 leading-7 text-slate-600">商品一覧から、もう一度お選びください。</p>
+        <a href="./index.html" class="mt-6 inline-flex min-h-[50px] items-center justify-center rounded-md bg-navy px-6 py-3 text-sm font-bold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">商品一覧へ戻る</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white px-5 py-10">
+    <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_1fr_1fr]">
+      <div>
+        <p class="font-bold text-navy">MK Web Create</p>
+        <p class="mt-2 text-sm leading-6 text-slate-500">Web・AI・Excel・資料・簡易ツールを使った小さな業務改善とWeb制作</p>
+      </div>
+      <nav class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-slate-600" aria-label="フッターメニュー">
+        <a href="../index.html#services" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">できること</a>
+        <a href="../index.html#works" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">制作・改善事例</a>
+        <a href="./index.html" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">ツール販売</a>
+        <a href="../index.html#about" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">プロフィール</a>
+        <a href="../index.html#contact" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">お問い合わせ</a>
+        <a href="../privacy-policy.html" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">プライバシーポリシー</a>
+      </nav>
+      <div class="grid content-start gap-3 text-sm font-semibold text-slate-600">
+        <a href="https://www.instagram.com/mk.web.create/" target="_blank" rel="noopener noreferrer" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">Instagram</a>
+        <a href="https://lin.ee/8hux5u7" target="_blank" rel="noopener noreferrer" class="hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">公式LINE</a>
+      </div>
+    </div>
+    <p class="mx-auto mt-8 max-w-7xl border-t border-slate-200 pt-6 text-center text-sm text-slate-500">&copy; 2026 MK Web Create. All rights reserved.</p>
+  </footer>
+
+  <script src="../assets/js/products.js"></script>
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function setMenu(open) {
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      mobileMenu.classList.toggle('hidden', !open);
+    }
+
+    menuButton.addEventListener('click', () => {
+      setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMenu(false);
+    });
+
+    const escapeHtml = (value) => String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+    const formatPrice = (price) => `${new Intl.NumberFormat('ja-JP').format(price)}円`;
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get('id') || 'proposal-item-list';
+    const products = Array.isArray(window.MK_PRODUCTS) ? window.MK_PRODUCTS : [];
+    const product = products.find((item) => item.id === requestedId);
+
+    if (!product) {
+      document.getElementById('product-page').classList.add('hidden');
+      document.getElementById('product-not-found').classList.remove('hidden');
+    } else {
+      const formattedPrice = formatPrice(product.price);
+      const purchaseNote = 'STORESの商品ページは準備中です。現在のリンク先は動作確認用の仮ページです。';
+
+      document.title = `${product.name}｜業務改善ツール｜MK Web Create`;
+      document.querySelector('meta[name="description"]').setAttribute('content', product.shortDescription);
+      document.querySelector('meta[property="og:title"]').setAttribute('content', `${product.name}｜MK Web Create`);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', product.shortDescription);
+      document.querySelector('meta[property="og:url"]').setAttribute('content', `https://mk-web-create.github.io/tools/product.html?id=${encodeURIComponent(product.id)}`);
+      document.querySelector('meta[property="og:image"]').setAttribute('content', new URL(product.image, 'https://mk-web-create.github.io/tools/').href);
+      document.querySelector('meta[name="twitter:title"]').setAttribute('content', `${product.name}｜MK Web Create`);
+      document.querySelector('meta[name="twitter:description"]').setAttribute('content', product.shortDescription);
+      document.querySelector('meta[name="twitter:image"]').setAttribute('content', new URL(product.image, 'https://mk-web-create.github.io/tools/').href);
+
+      document.getElementById('breadcrumb-name').textContent = product.name;
+      document.getElementById('product-category').textContent = product.category;
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-tagline').textContent = product.tagline;
+      document.getElementById('product-summary').textContent = product.shortDescription;
+      document.getElementById('hero-price').textContent = formattedPrice;
+      document.getElementById('purchase-price').textContent = formattedPrice;
+      document.getElementById('purchase-name').textContent = product.name;
+
+      const productImage = document.getElementById('product-image');
+      productImage.src = product.image;
+      productImage.alt = product.imageAlt;
+
+      ['hero-purchase-link', 'purchase-link'].forEach((id) => {
+        const link = document.getElementById(id);
+        link.href = product.storesUrl;
+        link.setAttribute('aria-label', `${product.name}をSTORESで購入する（新しいタブで開きます）`);
+      });
+
+      if (product.storesUrlIsPlaceholder) {
+        ['hero-purchase-note', 'purchase-note'].forEach((id) => {
+          const note = document.getElementById(id);
+          note.textContent = purchaseNote;
+          note.classList.remove('hidden');
+        });
+      }
+
+      document.getElementById('pain-list').innerHTML = product.pains.map((pain, index) => `
+        <article class="flex gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-mist text-sm font-bold text-navy" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+          <p class="leading-7 text-slate-700">${escapeHtml(pain)}</p>
+        </article>
+      `).join('');
+
+      document.getElementById('feature-list').innerHTML = product.features.map((feature, index) => `
+        <article class="rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <p class="text-sm font-bold text-slate-400">${String(index + 1).padStart(2, '0')}</p>
+          <h3 class="mt-3 text-xl font-bold text-navy">${escapeHtml(feature.title)}</h3>
+          <p class="mt-3 leading-7 text-slate-600">${escapeHtml(feature.description)}</p>
+        </article>
+      `).join('');
+
+      document.getElementById('step-list').innerHTML = product.steps.map((step, index) => `
+        <li class="relative rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-sm font-bold text-white">${String(index + 1).padStart(2, '0')}</span>
+          <h3 class="mt-4 text-xl font-bold text-navy">${escapeHtml(step.title)}</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">${escapeHtml(step.description)}</p>
+        </li>
+      `).join('');
+
+      document.getElementById('recommended-list').innerHTML = product.recommendedFor.map((item) => `
+        <li class="flex gap-3 rounded-lg bg-white/10 p-5 leading-7 ring-1 ring-white/20">
+          <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-sm font-bold text-navy" aria-hidden="true">✓</span>
+          <span>${escapeHtml(item)}</span>
+        </li>
+      `).join('');
+
+      document.getElementById('note-list').innerHTML = product.notes.map((note) => `
+        <li class="flex gap-3 rounded-md bg-mist px-4 py-3 leading-7 text-slate-700">
+          <span class="mt-1 font-bold text-navy" aria-hidden="true">・</span>
+          <span>${escapeHtml(note)}</span>
+        </li>
+      `).join('');
+    }
+  </script>
+</body>
+</html>
