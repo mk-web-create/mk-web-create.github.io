@@ -268,7 +268,7 @@
         </div>
 
         <article class="overflow-hidden rounded-xl bg-navy text-white shadow-lg">
-          <div class="grid gap-8 p-6 md:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div class="p-6 md:p-9">
             <div>
               <div class="flex flex-wrap gap-2 text-xs font-bold">
                 <span class="rounded-md bg-white px-3 py-1 text-navy">業務改善ツール / Demo</span>
@@ -279,6 +279,22 @@
               <p class="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-slate-300">Automation Demo</p>
               <h3 class="mt-3 text-2xl font-bold leading-snug sm:text-3xl">商品URLから提案資料を自動生成</h3>
               <p class="mt-5 leading-8 text-slate-200">商品情報の収集から資料への転記まで、商品ごとに繰り返していた作業を整理。Excelへ商品URLを入力すると、情報取得からPowerPoint作成まで進められるデモを制作しました。</p>
+            </div>
+
+            <section class="mt-8 rounded-xl bg-white p-5 text-ink shadow-sm ring-1 ring-slate-200 sm:p-7" aria-labelledby="proposal-demo-movie-title">
+              <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Demo Movie</p>
+              <h4 id="proposal-demo-movie-title" class="mt-2 text-xl font-bold text-navy sm:text-2xl">URL入力からPowerPoint生成まで</h4>
+              <p id="proposal-demo-movie-description" class="mt-3 leading-7 text-slate-600">Excelに商品URLを入力してから、商品情報を取得し、PowerPointが生成されるまでの流れをご覧いただけます。</p>
+              <div class="mt-5 overflow-hidden rounded-lg bg-slate-950 shadow-sm ring-1 ring-slate-200">
+                <video class="aspect-video w-full object-contain" width="1920" height="1080" controls playsinline preload="metadata" muted poster="./assets/images/automation-demo/product-url-powerpoint-demo-poster.png" aria-label="URL入力からPowerPoint生成までのデモ動画" aria-describedby="proposal-demo-movie-description">
+                  <source src="./assets/videos/product-url-powerpoint-demo.mp4" type="video/mp4">
+                  お使いのブラウザでは動画を再生できません。
+                </video>
+              </div>
+            </section>
+
+            <div class="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div>
 
               <div class="mt-7 grid gap-4 sm:grid-cols-2">
                 <div class="rounded-lg bg-white/10 p-5 ring-1 ring-white/20">
@@ -343,6 +359,43 @@
 
               <p class="mt-6 rounded-md border-l-4 border-navy bg-mist px-4 py-3 text-sm leading-7 text-slate-600">サイトによって取得精度に差があるため、自動化と人の確認を組み合わせています。見積資料、仕様書、商品一覧、営業資料、定型レポートなど、情報を集めて資料にまとめる業務にも応用できます。</p>
             </div>
+          </div>
+          </div>
+        </article>
+
+        <article id="inventory-order-demo-card" class="mt-8 scroll-mt-28 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+          <div class="grid gap-8 p-6 md:p-9 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <div>
+              <div class="flex flex-wrap gap-2 text-xs font-bold text-navy">
+                <span class="rounded-md bg-mist px-3 py-1">#業務改善</span>
+                <span class="rounded-md bg-mist px-3 py-1">#製造業</span>
+                <span class="rounded-md bg-mist px-3 py-1">#Webシステム</span>
+              </div>
+              <p class="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Business Improvement Demo</p>
+              <h3 class="mt-3 text-2xl font-bold leading-snug text-navy sm:text-3xl">製造業向け<br>在庫・発注管理 業務改善デモ</h3>
+              <p class="mt-4 font-bold leading-7 text-slate-700">入出庫から在庫不足の検出、発注判断までを効率化するWebシステム</p>
+              <p class="mt-4 leading-8 text-slate-600">Excelや紙に分かれていた部品在庫・入出庫・発注判断を、一つの流れで確認できる試作です。入出庫を登録すると在庫を更新し、不足部品と推奨発注数を自動で表示します。</p>
+
+              <ol class="mt-6 grid gap-2 text-sm font-bold text-navy sm:grid-cols-3" aria-label="在庫・発注管理の改善フロー">
+                <li class="rounded-md bg-mist px-4 py-3">入出庫を登録</li>
+                <li class="rounded-md bg-mist px-4 py-3">不足を自動検出</li>
+                <li class="rounded-md bg-mist px-4 py-3">発注判断を支援</li>
+              </ol>
+
+              <p class="mt-6 rounded-md border-l-4 border-navy bg-mist px-4 py-3 text-sm leading-7 text-slate-600">架空データを使った営業用の業務改善デモです。実際の導入時は、各社の既存Excelや業務フローを確認して必要な部分を調整します。</p>
+              <a href="./works/inventory-order-demo.html" class="mt-6 inline-flex min-h-[50px] w-full items-center justify-center gap-3 rounded-md bg-navy px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy sm:w-auto">
+                この事例の詳細を見る
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <figure class="overflow-hidden rounded-xl border border-slate-200 bg-slate-950 shadow-sm">
+              <video class="aspect-video w-full object-contain" width="1920" height="1080" muted playsinline controls preload="metadata" poster="./assets/images/inventory-order-demo/quick-title-poster.png" aria-label="出庫登録から在庫不足の検出、推奨発注数量の計算、発注管理までを約21秒で紹介する動画">
+                <source src="./assets/videos/demo_inventory_order_quick_title.mp4" type="video/mp4">
+                お使いのブラウザでは動画を再生できません。詳細ページで画面と業務改善の流れをご確認ください。
+              </video>
+              <figcaption class="border-t border-slate-200 bg-white px-5 py-4 text-sm leading-6 text-slate-600">約21秒で、出庫から在庫不足の検出・発注管理までの流れを確認できます。</figcaption>
+            </figure>
           </div>
         </article>
 
