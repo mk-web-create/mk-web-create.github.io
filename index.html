@@ -268,7 +268,7 @@
         </div>
 
         <article class="overflow-hidden rounded-xl bg-navy text-white shadow-lg">
-          <div class="p-6 md:p-9">
+          <div class="grid gap-8 p-6 md:p-9 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <div>
               <div class="flex flex-wrap gap-2 text-xs font-bold">
                 <span class="rounded-md bg-white px-3 py-1 text-navy">業務改善ツール / Demo</span>
@@ -279,23 +279,6 @@
               <p class="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-slate-300">Automation Demo</p>
               <h3 class="mt-3 text-2xl font-bold leading-snug sm:text-3xl">商品URLから提案資料を自動生成</h3>
               <p class="mt-5 leading-8 text-slate-200">商品情報の収集から資料への転記まで、商品ごとに繰り返していた作業を整理。Excelへ商品URLを入力すると、情報取得からPowerPoint作成まで進められるデモを制作しました。</p>
-            </div>
-
-            <section class="mt-8 rounded-xl bg-white p-5 text-ink shadow-sm ring-1 ring-slate-200 sm:p-7" aria-labelledby="proposal-demo-movie-title">
-              <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Demo Movie</p>
-              <h4 id="proposal-demo-movie-title" class="mt-2 text-xl font-bold text-navy sm:text-2xl">URL入力からPowerPoint生成まで</h4>
-              <p id="proposal-demo-movie-description" class="mt-3 leading-7 text-slate-600">Excelに商品URLを入力してから、商品情報を取得し、PowerPointが生成されるまでの流れをご覧いただけます。</p>
-              <div class="mt-5 overflow-hidden rounded-lg bg-slate-950 shadow-sm ring-1 ring-slate-200">
-                <video class="aspect-video w-full object-contain" width="1920" height="1080" controls playsinline preload="metadata" muted poster="./assets/images/automation-demo/product-url-powerpoint-demo-poster.png" aria-label="URL入力からPowerPoint生成までのデモ動画" aria-describedby="proposal-demo-movie-description">
-                  <source src="./assets/videos/product-url-powerpoint-demo.mp4" type="video/mp4">
-                  お使いのブラウザでは動画を再生できません。
-                </video>
-              </div>
-            </section>
-
-            <div class="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div>
-
               <div class="mt-7 grid gap-4 sm:grid-cols-2">
                 <div class="rounded-lg bg-white/10 p-5 ring-1 ring-white/20">
                   <p class="text-sm font-bold text-slate-300">BEFORE</p>
@@ -317,49 +300,62 @@
               </div>
             </div>
 
-            <div class="rounded-xl bg-white p-5 text-ink shadow-sm sm:p-7">
-              <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">How it works</p>
-              <ol class="mt-5 grid gap-3 sm:grid-cols-3" aria-label="提案資料ができるまでの3ステップ">
-                <li class="rounded-lg bg-mist p-4 ring-1 ring-slate-200">
-                  <span class="text-sm font-bold text-slate-400">01</span>
-                  <p class="mt-2 font-bold text-navy">URLを入力</p>
-                  <p class="mt-1 text-sm leading-6 text-slate-600">Excelに商品URLを貼り付け</p>
-                </li>
-                <li class="rounded-lg bg-mist p-4 ring-1 ring-slate-200">
-                  <span class="text-sm font-bold text-slate-400">02</span>
-                  <p class="mt-2 font-bold text-navy">情報を自動取得</p>
-                  <p class="mt-1 text-sm leading-6 text-slate-600">商品情報・画像・価格を整理</p>
-                </li>
-                <li class="rounded-lg bg-mist p-4 ring-1 ring-slate-200">
-                  <span class="text-sm font-bold text-slate-400">03</span>
-                  <p class="mt-2 font-bold text-navy">資料完成</p>
-                  <p class="mt-1 text-sm leading-6 text-slate-600">PowerPointと合計金額を生成</p>
-                </li>
-              </ol>
+            <div class="grid gap-6">
+              <section class="overflow-hidden rounded-xl bg-white text-ink shadow-sm ring-1 ring-slate-200" aria-labelledby="proposal-demo-movie-title">
+                <div class="p-5 sm:p-6">
+                  <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Demo Movie</p>
+                  <h4 id="proposal-demo-movie-title" class="mt-2 text-xl font-bold text-navy sm:text-2xl">URL入力からPowerPoint生成まで</h4>
+                  <p id="proposal-demo-movie-description" class="mt-3 leading-7 text-slate-600">Excelに商品URLを入力してから、商品情報を取得し、PowerPointが生成されるまでの流れをご覧いただけます。</p>
+                </div>
+                <video class="aspect-video w-full bg-slate-950 object-contain" width="1920" height="1080" controls playsinline preload="metadata" muted poster="./assets/images/automation-demo/product-url-powerpoint-demo-poster.png" aria-label="URL入力からPowerPoint生成までのデモ動画" aria-describedby="proposal-demo-movie-description">
+                  <source src="./assets/videos/product-url-powerpoint-demo.mp4" type="video/mp4">
+                  お使いのブラウザでは動画を再生できません。
+                </video>
+              </section>
 
-              <div class="mt-6 grid gap-5 sm:grid-cols-2">
-                <div>
-                  <h4 class="font-bold text-navy">自動化した内容</h4>
-                  <ul class="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
-                    <li>・商品情報、商品画像の取得</li>
-                    <li>・資料レイアウト、参照元URL</li>
-                    <li>・合計金額の計算</li>
-                    <li>・PowerPointページ生成</li>
-                  </ul>
+              <div class="rounded-xl bg-white p-5 text-ink shadow-sm sm:p-7">
+                <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">How it works</p>
+                <ol class="mt-5 grid gap-3 sm:grid-cols-3" aria-label="提案資料ができるまでの3ステップ">
+                  <li class="rounded-lg bg-mist p-4 ring-1 ring-slate-200">
+                    <span class="text-sm font-bold text-slate-400">01</span>
+                    <p class="mt-2 font-bold text-navy">URLを入力</p>
+                    <p class="mt-1 text-sm leading-6 text-slate-600">Excelに商品URLを貼り付け</p>
+                  </li>
+                  <li class="rounded-lg bg-mist p-4 ring-1 ring-slate-200">
+                    <span class="text-sm font-bold text-slate-400">02</span>
+                    <p class="mt-2 font-bold text-navy">情報を自動取得</p>
+                    <p class="mt-1 text-sm leading-6 text-slate-600">商品情報・画像・価格を整理</p>
+                  </li>
+                  <li class="rounded-lg bg-mist p-4 ring-1 ring-slate-200">
+                    <span class="text-sm font-bold text-slate-400">03</span>
+                    <p class="mt-2 font-bold text-navy">資料完成</p>
+                    <p class="mt-1 text-sm leading-6 text-slate-600">PowerPointと合計金額を生成</p>
+                  </li>
+                </ol>
+
+                <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <h4 class="font-bold text-navy">自動化した内容</h4>
+                    <ul class="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
+                      <li>・商品情報、商品画像の取得</li>
+                      <li>・資料レイアウト、参照元URL</li>
+                      <li>・合計金額の計算</li>
+                      <li>・PowerPointページ生成</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy">検証と確認</h4>
+                    <ul class="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
+                      <li>・20商品を使って動作検証</li>
+                      <li>・複数ECサイト、複数カテゴリーで確認</li>
+                      <li>・取得できない項目は「要確認」で継続</li>
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <h4 class="font-bold text-navy">検証と確認</h4>
-                  <ul class="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
-                    <li>・20商品を使って動作検証</li>
-                    <li>・複数ECサイト、複数カテゴリーで確認</li>
-                    <li>・取得できない項目は「要確認」で継続</li>
-                  </ul>
-                </div>
+
+                <p class="mt-6 rounded-md border-l-4 border-navy bg-mist px-4 py-3 text-sm leading-7 text-slate-600">サイトによって取得精度に差があるため、自動化と人の確認を組み合わせています。見積資料、仕様書、商品一覧、営業資料、定型レポートなど、情報を集めて資料にまとめる業務にも応用できます。</p>
               </div>
-
-              <p class="mt-6 rounded-md border-l-4 border-navy bg-mist px-4 py-3 text-sm leading-7 text-slate-600">サイトによって取得精度に差があるため、自動化と人の確認を組み合わせています。見積資料、仕様書、商品一覧、営業資料、定型レポートなど、情報を集めて資料にまとめる業務にも応用できます。</p>
             </div>
-          </div>
           </div>
         </article>
 
